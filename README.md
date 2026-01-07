@@ -2,7 +2,7 @@
 
 A fast, beautiful Markdown editor with live preview, AI assistance, and export features.
 
-**🌐 Live Demo:** [https://markdown-viewer-51k.pages.dev](https://markdown-viewer-51k.pages.dev)
+**🌐 Live Demo:** [https://markdownviewer.dev](https://markdownviewer.dev/)
 
 **📦 GitHub:** [https://github.com/argha5/markdown-view](https://github.com/argha5/markdown-view)
 
