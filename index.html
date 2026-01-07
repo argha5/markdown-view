@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="The best free online Markdown viewer and editor with live preview, syntax highlighting, Mermaid diagrams, LaTeX math, and PDF export. Fast, beautiful, and distraction-free.">
+    <meta name="keywords"
+        content="markdown viewer, markdown editor, live preview, markdown to pdf, mermaid diagrams, latex math, github markdown">
+    <meta name="author" content="markdownviewer.dev">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Markdown Viewer - Fast, Beautiful Live Preview">
+    <meta property="og:description"
+        content="The best free online Markdown viewer with live preview, syntax highlighting, diagrams, and PDF export.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://markdownviewer.dev">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Markdown Viewer - Fast, Beautiful Live Preview">
+    <meta name="twitter:description"
+        content="The best free online Markdown viewer with live preview, syntax highlighting, diagrams, and PDF export.">
+
+    <title>Markdown Viewer - Fast, Beautiful Live Preview | markdownviewer.dev</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+        rel="stylesheet">
+
+    <!-- Highlight.js -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css"
+        id="hljs-theme">
+
+    <!-- KaTeX -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+
+    <!-- Main Styles -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="themes.css">
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "Markdown Viewer",
+        "url": "https://markdownviewer.dev",
+        "applicationCategory": "DeveloperApplication",
+        "operatingSystem": "Web Browser",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        },
+        "description": "A fast, beautiful online Markdown viewer with live preview, syntax highlighting, Mermaid diagrams, LaTeX math support, and PDF export.",
+        "featureList": [
+            "Live Markdown Preview",
+            "GitHub Flavored Markdown",
+            "Syntax Highlighting",
+            "Mermaid Diagrams",
+            "LaTeX Math (KaTeX)",
+            "PDF Export",
+            "HTML Export",
+            "20+ Themes",
+            "Distraction-free Mode"
+        ]
+    }
+    </script>
+</head>
+
+<body>
+    <div class="app-container">
+        <!-- Header -->
+        <header class="header">
+            <div class="logo">
+                <svg class="logo-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M3 5C3 3.89543 3.89543 3 5 3H19C20.1046 3 21 3.89543 21 5V19C21 20.1046 20.1046 21 19 21H5C3.89543 21 3 20.1046 3 19V5Z"
+                        stroke="currentColor" stroke-width="2" />
+                    <path d="M7 15V9L10 12L13 9V15" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                    <path d="M17 9V15L15 13" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                </svg>
+                <span class="logo-text">markdownviewer.dev</span>
+                <a href="https://github.com/argha5/markdown-view" target="_blank" rel="noopener noreferrer"
+                    class="github-link" title="View on GitHub - Contribute!">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                        <path
+                            d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                    </svg>
+                </a>
+            </div>
+            <div class="header-actions">
+                <!-- Stats Display -->
+                <div class="stats-display" id="statsDisplay">
+                    <span class="stat-item" id="wordCount" title="Word count">0 words</span>
+                    <span class="stat-divider">•</span>
+                    <span class="stat-item" id="charCount" title="Character count">0 chars</span>
+                    <span class="stat-divider">•</span>
+                    <span class="stat-item" id="readingTime" title="Estimated reading time">0 min read</span>
+                </div>
+
+                <!-- Theme Selector -->
+                <div class="theme-selector">
+                    <button class="btn btn-icon" id="themeMenuBtn" title="Choose theme">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <circle cx="12" cy="12" r="3" />
+                            <path
+                                d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" />
+                        </svg>
+                    </button>
+                    <div class="theme-dropdown" id="themeDropdown">
+                        <div class="theme-dropdown-header">Choose Theme</div>
+                        <div class="theme-list" id="themeList"></div>
+                    </div>
+                </div>
+
+                <!-- Export Dropdown -->
+                <div class="export-dropdown-container">
+                    <button class="btn btn-primary" id="exportBtn" title="Export document">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                            <polyline points="7,10 12,15 17,10" />
+                            <line x1="12" y1="15" x2="12" y2="3" />
+                        </svg>
+                        Export
+                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <polyline points="6 9 12 15 18 9" />
+                        </svg>
+                    </button>
+                    <div class="export-dropdown" id="exportDropdown">
+                        <button class="export-option" data-format="md">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                                <polyline points="14 2 14 8 20 8" />
+                            </svg>
+                            Markdown (.md)
+                        </button>
+                        <button class="export-option" data-format="html">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <polyline points="16 18 22 12 16 6" />
+                                <polyline points="8 6 2 12 8 18" />
+                            </svg>
+                            HTML (styled)
+                        </button>
+                        <button class="export-option" data-format="pdf">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                                <polyline points="14 2 14 8 20 8" />
+                                <line x1="16" y1="13" x2="8" y2="13" />
+                                <line x1="16" y1="17" x2="8" y2="17" />
+                            </svg>
+                            PDF Document
+                        </button>
+                    </div>
+                </div>
+
+                <!-- View Mode Toggle -->
+                <button class="btn btn-icon" id="readingModeBtn" title="Reading mode (F11)">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" />
+                        <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" />
+                    </svg>
+                </button>
+
+                <!-- TOC Toggle -->
+                <button class="btn btn-icon" id="tocToggle" title="Table of Contents">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="8" y1="6" x2="21" y2="6" />
+                        <line x1="8" y1="12" x2="21" y2="12" />
+                        <line x1="8" y1="18" x2="21" y2="18" />
+                        <line x1="3" y1="6" x2="3.01" y2="6" />
+                        <line x1="3" y1="12" x2="3.01" y2="12" />
+                        <line x1="3" y1="18" x2="3.01" y2="18" />
+                    </svg>
+                </button>
+
+                <!-- AI Assistant Toggle -->
+                <button class="btn btn-icon ai-btn" id="aiToggle" title="AI Assistant">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path
+                            d="M12 2a2 2 0 0 1 2 2c0 .74-.4 1.39-1 1.73V7h1a7 7 0 0 1 7 7h1a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1h-1v1a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-1H2a1 1 0 0 1-1-1v-3a1 1 0 0 1 1-1h1a7 7 0 0 1 7-7h1V5.73c-.6-.34-1-.99-1-1.73a2 2 0 0 1 2-2z" />
+                        <circle cx="8" cy="14" r="1" />
+                        <circle cx="16" cy="14" r="1" />
+                    </svg>
+                </button>
+
+                <!-- Version History Toggle -->
+                <button class="btn btn-icon" id="historyToggle" title="Version History">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="10" />
+                        <polyline points="12 6 12 12 16 14" />
+                    </svg>
+                </button>
+
+                <!-- Command Palette Hint -->
+                <button class="btn btn-secondary command-hint" id="commandPaletteBtn" title="Command palette">
+                    <kbd>Ctrl</kbd> + <kbd>K</kbd>
+                </button>
+            </div>
+        </header>
+
+        <!-- Floating Toolbar -->
+        <div class="floating-toolbar" id="floatingToolbar">
+            <button class="toolbar-btn" data-action="bold" title="Bold (Ctrl+B)">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                    <path d="M6 4h8a4 4 0 0 1 4 4 4 4 0 0 1-4 4H6z" />
+                    <path d="M6 12h9a4 4 0 0 1 4 4 4 4 0 0 1-4 4H6z" />
+                </svg>
+            </button>
+            <button class="toolbar-btn" data-action="italic" title="Italic (Ctrl+I)">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="19" y1="4" x2="10" y2="4" />
+                    <line x1="14" y1="20" x2="5" y2="20" />
+                    <line x1="15" y1="4" x2="9" y2="20" />
+                </svg>
+            </button>
+            <button class="toolbar-btn" data-action="strikethrough" title="Strikethrough">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M17.3 4.9c-1.4-1.1-3.3-1.5-5.3-1.4-2.6.2-4.8 1.6-5.6 3.6-.5 1.2-.5 2.5.1 3.7" />
+                    <path d="M4 12h16" />
+                    <path d="M6.7 19.1c1.4 1.1 3.3 1.5 5.3 1.4 2.6-.2 4.8-1.6 5.6-3.6.5-1.2.5-2.5-.1-3.7" />
+                </svg>
+            </button>
+            <div class="toolbar-divider"></div>
+            <button class="toolbar-btn" data-action="h1" title="Heading 1">H1</button>
+            <button class="toolbar-btn" data-action="h2" title="Heading 2">H2</button>
+            <button class="toolbar-btn" data-action="h3" title="Heading 3">H3</button>
+            <div class="toolbar-divider"></div>
+            <button class="toolbar-btn" data-action="ul" title="Bullet list">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="8" y1="6" x2="21" y2="6" />
+                    <line x1="8" y1="12" x2="21" y2="12" />
+                    <line x1="8" y1="18" x2="21" y2="18" />
+                    <line x1="3" y1="6" x2="3.01" y2="6" />
+                    <line x1="3" y1="12" x2="3.01" y2="12" />
+                    <line x1="3" y1="18" x2="3.01" y2="18" />
+                </svg>
+            </button>
+            <button class="toolbar-btn" data-action="ol" title="Numbered list">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="10" y1="6" x2="21" y2="6" />
+                    <line x1="10" y1="12" x2="21" y2="12" />
+                    <line x1="10" y1="18" x2="21" y2="18" />
+                    <path d="M4 6h1v4" />
+                    <path d="M4 10h2" />
+                    <path d="M6 18H4c0-1 2-2 2-3s-1-1.5-2-1" />
+                </svg>
+            </button>
+            <button class="toolbar-btn" data-action="task" title="Task list">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="9 11 12 14 22 4" />
+                    <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
+                </svg>
+            </button>
+            <div class="toolbar-divider"></div>
+            <button class="toolbar-btn" data-action="link" title="Insert link (Ctrl+K)">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" />
+                    <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" />
+                </svg>
+            </button>
+            <button class="toolbar-btn" data-action="image" title="Insert image">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
+                    <circle cx="8.5" cy="8.5" r="1.5" />
+                    <polyline points="21 15 16 10 5 21" />
+                </svg>
+            </button>
+            <button class="toolbar-btn" data-action="code" title="Inline code">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="16 18 22 12 16 6" />
+                    <polyline points="8 6 2 12 8 18" />
+                </svg>
+            </button>
+            <button class="toolbar-btn" data-action="codeblock" title="Code block">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="3" y="3" width="18" height="18" rx="2" />
+                    <path d="M7 7h.01" />
+                    <path d="M11 7h.01" />
+                    <path d="M7 11h10" />
+                    <path d="M7 15h6" />
+                </svg>
+            </button>
+            <div class="toolbar-divider"></div>
+            <button class="toolbar-btn" data-action="quote" title="Blockquote">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path
+                        d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2H4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-1 1.031V21z" />
+                    <path
+                        d="M15 21c3 0 7-1 7-8V5c0-1.25-.757-2.017-2-2h-4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2h.75c0 2.25.25 4-2.75 4v3c0 1 0 1 1 1z" />
+                </svg>
+            </button>
+            <button class="toolbar-btn" data-action="hr" title="Horizontal rule">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="5" y1="12" x2="19" y2="12" />
+                </svg>
+            </button>
+            <button class="toolbar-btn" data-action="table" title="Insert table">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="3" y="3" width="18" height="18" rx="2" />
+                    <line x1="3" y1="9" x2="21" y2="9" />
+                    <line x1="3" y1="15" x2="21" y2="15" />
+                    <line x1="9" y1="3" x2="9" y2="21" />
+                    <line x1="15" y1="3" x2="15" y2="21" />
+                </svg>
+            </button>
+            <div class="toolbar-divider"></div>
+            <button class="toolbar-btn" data-action="mermaid" title="Insert Mermaid diagram">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polygon points="12 2 2 7 12 12 22 7 12 2" />
+                    <polyline points="2 17 12 22 22 17" />
+                    <polyline points="2 12 12 17 22 12" />
+                </svg>
+            </button>
+            <button class="toolbar-btn" data-action="math" title="Insert LaTeX math">
+                <span style="font-family: serif; font-style: italic; font-size: 14px;">∑</span>
+            </button>
+            <div class="toolbar-divider"></div>
+            <button class="toolbar-btn" data-action="undo" title="Undo (Ctrl+Z)">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M3 7v6h6" />
+                    <path d="M21 17a9 9 0 0 0-9-9 9 9 0 0 0-6 2.3L3 13" />
+                </svg>
+            </button>
+            <button class="toolbar-btn" data-action="redo" title="Redo (Ctrl+Shift+Z)">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M21 7v6h-6" />
+                    <path d="M3 17a9 9 0 0 1 9-9 9 9 0 0 1 6 2.3l3 2.7" />
+                </svg>
+            </button>
+        </div>
+
+        <!-- Main Editor Area -->
+        <main class="main-content">
+            <!-- Table of Contents Sidebar -->
+            <aside class="toc-sidebar" id="tocSidebar">
+                <div class="toc-header">
+                    <span>Table of Contents</span>
+                    <button class="toc-close" id="tocClose">×</button>
+                </div>
+                <nav class="toc-content" id="tocContent">
+                    <p class="toc-empty">No headings found</p>
+                </nav>
+            </aside>
+
+            <!-- Editor Panel -->
+            <section class="panel editor-panel">
+                <div class="panel-header">
+                    <div class="panel-title">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7" />
+                            <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z" />
+                        </svg>
+                        Editor
+                    </div>
+                    <div class="panel-actions">
+                        <button class="btn btn-sm" id="copyMarkdownBtn" title="Copy Markdown">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <rect x="9" y="9" width="13" height="13" rx="2" ry="2" />
+                                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+                <textarea id="markdownInput" placeholder="Start writing your markdown here..."
+                    spellcheck="false"></textarea>
+            </section>
+
+            <!-- Resize Handle -->
+            <div class="resize-handle" id="resizeHandle"></div>
+
+            <!-- Preview Panel -->
+            <section class="panel preview-panel">
+                <div class="panel-header">
+                    <div class="panel-title">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
+                            <circle cx="12" cy="12" r="3" />
+                        </svg>
+                        Preview
+                    </div>
+                    <div class="panel-actions">
+                        <button class="btn btn-sm" id="copyHtmlBtn" title="Copy HTML">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <polyline points="16 18 22 12 16 6" />
+                                <polyline points="8 6 2 12 8 18" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+                <div class="preview-content" id="previewContent">
+                    <p class="placeholder-text">Your rendered markdown will appear here...</p>
+                </div>
+            </section>
+        </main>
+
+        <!-- Mobile View Toggle -->
+        <div class="mobile-view-toggle" id="mobileViewToggle">
+            <button class="view-btn active" data-view="editor">Editor</button>
+            <button class="view-btn" data-view="preview">Preview</button>
+        </div>
+    </div>
+
+    <!-- Command Palette Modal -->
+    <div class="command-palette-overlay" id="commandPaletteOverlay">
+        <div class="command-palette" id="commandPalette">
+            <div class="command-search">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="11" cy="11" r="8" />
+                    <line x1="21" y1="21" x2="16.65" y2="16.65" />
+                </svg>
+                <input type="text" id="commandSearch" placeholder="Type a command or search..." autocomplete="off">
+            </div>
+            <div class="command-list" id="commandList"></div>
+            <div class="command-footer">
+                <span><kbd>↑</kbd><kbd>↓</kbd> Navigate</span>
+                <span><kbd>Enter</kbd> Select</span>
+                <span><kbd>Esc</kbd> Close</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Reading Mode Container -->
+    <div class="reading-mode-container" id="readingModeContainer">
+        <button class="reading-mode-close" id="readingModeClose">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="18" y1="6" x2="6" y2="18" />
+                <line x1="6" y1="6" x2="18" y2="18" />
+            </svg>
+        </button>
+        <div class="reading-mode-content" id="readingModeContent"></div>
+    </div>
+
+    <!-- AI Assistant Sidebar -->
+    <aside class="ai-sidebar" id="aiSidebar">
+        <div class="ai-header">
+            <div class="ai-title">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path
+                        d="M12 2a2 2 0 0 1 2 2c0 .74-.4 1.39-1 1.73V7h1a7 7 0 0 1 7 7h1a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1h-1v1a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-1H2a1 1 0 0 1-1-1v-3a1 1 0 0 1 1-1h1a7 7 0 0 1 7-7h1V5.73c-.6-.34-1-.99-1-1.73a2 2 0 0 1 2-2z" />
+                    <circle cx="8" cy="14" r="1" />
+                    <circle cx="16" cy="14" r="1" />
+                </svg>
+                AI Assistant
+            </div>
+            <button class="ai-close" id="aiClose">×</button>
+        </div>
+
+        <!-- AI Quick Actions -->
+        <div class="ai-actions">
+            <button class="ai-action-btn" data-action="grammar" title="Check grammar and clarity">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M12 20h9" />
+                    <path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z" />
+                </svg>
+                Grammar
+            </button>
+            <button class="ai-action-btn" data-action="rewrite" title="Rewrite selected text">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z" />
+                </svg>
+                Rewrite
+            </button>
+            <button class="ai-action-btn" data-action="summarize" title="Summarize document">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                    <polyline points="14 2 14 8 20 8" />
+                    <line x1="16" y1="13" x2="8" y2="13" />
+                    <line x1="16" y1="17" x2="8" y2="17" />
+                </svg>
+                Summarize
+            </button>
+            <button class="ai-action-btn" data-action="expand" title="Expand/elaborate content">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="15 3 21 3 21 9" />
+                    <polyline points="9 21 3 21 3 15" />
+                    <line x1="21" y1="3" x2="14" y2="10" />
+                    <line x1="3" y1="21" x2="10" y2="14" />
+                </svg>
+                Expand
+            </button>
+            <button class="ai-action-btn" data-action="format" title="Auto-format markdown">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="21" y1="10" x2="3" y2="10" />
+                    <line x1="21" y1="6" x2="3" y2="6" />
+                    <line x1="21" y1="14" x2="3" y2="14" />
+                    <line x1="21" y1="18" x2="3" y2="18" />
+                </svg>
+                Format
+            </button>
+            <button class="ai-action-btn" data-action="generate" title="Generate content">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
+                </svg>
+                Generate
+            </button>
+        </div>
+
+        <!-- AI Chat Messages -->
+        <div class="ai-messages" id="aiMessages">
+            <div class="ai-message ai-message-assistant">
+                <div class="ai-message-content">
+                    👋 Hi! I'm your <strong>Markdown Writing Assistant</strong>. I'm here to help you write and edit
+                    your document!
+                    <ul>
+                        <li>✏️ Fix grammar & improve clarity</li>
+                        <li>🔄 Rewrite or improve selected text</li>
+                        <li>📝 Summarize or expand content</li>
+                        <li>📊 Suggest better formatting</li>
+                    </ul>
+                    <em>💡 Tip: Select text first, then click an action button above!</em>
+                </div>
+            </div>
+        </div>
+
+        <!-- AI Input -->
+        <div class="ai-input-container">
+            <textarea id="aiInput" placeholder="Ask about your document..." rows="2"></textarea>
+            <button class="ai-send-btn" id="aiSendBtn" title="Send message">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="22" y1="2" x2="11" y2="13" />
+                    <polygon points="22 2 15 22 11 13 2 9 22 2" />
+                </svg>
+            </button>
+        </div>
+    </aside>
+
+    <!-- Version History Panel -->
+    <aside class="history-sidebar" id="historySidebar">
+        <div class="history-header">
+            <div class="history-title">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="10" />
+                    <polyline points="12 6 12 12 16 14" />
+                </svg>
+                Version History
+            </div>
+            <button class="history-close" id="historyClose">×</button>
+        </div>
+        <div class="history-actions">
+            <button class="btn btn-sm" id="saveVersionBtn">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z" />
+                    <polyline points="17 21 17 13 7 13 7 21" />
+                    <polyline points="7 3 7 8 15 8" />
+                </svg>
+                Save Version
+            </button>
+            <button class="btn btn-sm" id="clearHistoryBtn">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="3 6 5 6 21 6" />
+                    <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2" />
+                </svg>
+                Clear
+            </button>
+        </div>
+        <div class="history-list" id="historyList">
+            <p class="history-empty">No saved versions yet.<br>Click "Save Version" to create a snapshot.</p>
+        </div>
+    </aside>
+
+    <!-- Share Modal -->
+    <div class="share-modal-overlay" id="shareModalOverlay">
+        <div class="share-modal" id="shareModal">
+            <div class="share-header">
+                <h3>Share Document</h3>
+                <button class="share-close" id="shareClose">×</button>
+            </div>
+            <div class="share-content">
+                <p>Copy this link to share your document:</p>
+                <div class="share-link-container">
+                    <input type="text" id="shareLink" readonly>
+                    <button class="btn btn-primary" id="copyShareLink">Copy</button>
+                </div>
+                <p class="share-note">Note: The entire document is encoded in the URL. Very long documents may not work
+                    in all browsers.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Find & Replace Modal -->
+    <div class="find-replace-bar" id="findReplaceBar">
+        <div class="find-replace-row">
+            <input type="text" id="findInput" placeholder="Find...">
+            <span class="find-count" id="findCount">0 results</span>
+            <button class="find-btn" id="findPrevBtn" title="Previous">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="15 18 9 12 15 6" />
+                </svg>
+            </button>
+            <button class="find-btn" id="findNextBtn" title="Next">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="9 18 15 12 9 6" />
+                </svg>
+            </button>
+        </div>
+        <div class="find-replace-row">
+            <input type="text" id="replaceInput" placeholder="Replace with...">
+            <button class="btn btn-sm" id="replaceBtn">Replace</button>
+            <button class="btn btn-sm" id="replaceAllBtn">Replace All</button>
+        </div>
+        <button class="find-close" id="findCloseBtn">×</button>
+    </div>
+
+    <!-- Toast Notification -->
+    <div class="toast" id="toast">
+        <svg class="toast-icon toast-success" width="16" height="16" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2">
+            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+            <polyline points="22 4 12 14.01 9 11.01" />
+        </svg>
+        <svg class="toast-icon toast-error" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="2">
+            <circle cx="12" cy="12" r="10" />
+            <line x1="15" y1="9" x2="9" y2="15" />
+            <line x1="9" y1="9" x2="15" y2="15" />
+        </svg>
+        <span id="toastMessage">Copied to clipboard!</span>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
