@@ -42,63 +42,7 @@ cd markdown-view
 
 ---
 
-## 🤖 AI Assistant Setup (Groq API)
-
-The AI features require a **free Groq API key**.
-
-### Step 1: Get Your API Key
-
-1. Go to [console.groq.com](https://console.groq.com)
-2. Sign up or log in
-3. Go to **API Keys** section
-4. Click **Create API Key**
-5. Copy the key (starts with `gsk_`)
-
-### Step 2: Use in App
-
-1. Open the Markdown Viewer
-2. Click the **green AI button** (robot icon)
-3. Try any AI action (Grammar, Rewrite, etc.)
-4. Enter your API key when prompted
-5. Key is saved in browser localStorage
-
-### API Configuration Details
-
-| Setting | Value |
-|---------|-------|
-| API URL | `https://api.groq.com/openai/v1/chat/completions` |
-| Model | `llama-3.3-70b-versatile` |
-| Max Tokens | 2048 |
-| Temperature | 0.7 |
-
-### Where API Key is Stored
-
-```javascript
-// In script.js - API key stored in browser localStorage
-const GROQ_API_KEY_STORAGE = 'groq_api_key';
-let GROQ_API_KEY = localStorage.getItem(GROQ_API_KEY_STORAGE) || '';
-```
-
-### To Clear/Change API Key
-
-Open browser console (F12) and run:
-```javascript
-localStorage.removeItem('groq_api_key');
-location.reload();
-```
-
----
-
 ## 🔧 Troubleshooting
-
-### AI Not Working
-
-| Problem | Solution |
-|---------|----------|
-| "API key required" | Enter your Groq API key when prompted |
-| API Error 401 | Invalid API key - check key at console.groq.com |
-| API Error 429 | Rate limited - wait a few seconds and retry |
-| API Error 500 | Groq server error - try again later |
 
 ### Common Issues
 
@@ -150,7 +94,6 @@ markdown-view/
 | Theme System | 600-800 | Theme loading & switching |
 | Command Palette | 800-1000 | Fuzzy search, command execution |
 | Event Listeners | 1000-1170 | Keyboard, clicks, drag-drop |
-| AI Assistant | 1170-1430 | Groq API integration |
 | Version History | 1430-1550 | Save/restore versions |
 | Find & Replace | 1550-1700 | Search functionality |
 | Share | 1700-1780 | URL encoding/decoding |
@@ -168,8 +111,6 @@ function updateStats() { ... }
 // Generate table of contents
 function generateTOC() { ... }
 
-// Call Groq API
-async function callGroqAPI(messages) { ... }
 
 // Save version to history
 function saveVersion() { ... }
@@ -185,7 +126,6 @@ function performFind() { ... }
 | `markdown_content` | Saved document content |
 | `markdown_theme` | Current theme ID |
 | `markdown_toc_visible` | TOC sidebar state |
-| `groq_api_key` | User's Groq API key |
 | `markdown_history` | Version history (JSON array) |
 
 ---
