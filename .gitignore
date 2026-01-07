@@ -16,3 +16,6 @@ node_modules/
 # Local environment files
 .env
 .env.local
+
+# API Configuration (contains secrets)
+config.js

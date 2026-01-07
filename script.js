@@ -1172,7 +1172,9 @@ function initEventListeners() {
 // PHASE 2: AI Assistant (Groq API)
 // ===================================
 const GROQ_API_KEY_STORAGE = 'groq_api_key';
-let GROQ_API_KEY = localStorage.getItem(GROQ_API_KEY_STORAGE) || '';
+// Try: 1) localStorage, 2) config.js (gitignored), 3) empty (will prompt)
+let GROQ_API_KEY = localStorage.getItem(GROQ_API_KEY_STORAGE) ||
+    (typeof CONFIG_API_KEY !== 'undefined' ? CONFIG_API_KEY : '');
 const GROQ_API_URL = 'https://api.groq.com/openai/v1/chat/completions';
 const GROQ_MODEL = 'llama-3.3-70b-versatile';
 
