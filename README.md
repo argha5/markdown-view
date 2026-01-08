@@ -254,3 +254,189 @@ MIT License - see [LICENSE](LICENSE) file.
 ---
 
 ⭐ Star this repo if you find it useful!
+Windows PowerShell
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+Install the latest PowerShell for new features and improvements! https://aka.ms/PSWindows
+
+PS C:\Users\argha> wrangler --version
+
+ ⛅️ wrangler 4.57.0
+───────────────────
+PS C:\Users\argha> wrangler login
+
+ ⛅️ wrangler 4.57.0
+───────────────────
+Attempting to login via OAuth...
+Opening a link in your default browser: https://dash.cloudflare.com/oauth2/auth?response_type=code&client_id=54d11594-84e4-41aa-b438-e81b8fa78ee7&redirect_uri=http%3A%2F%2Flocalhost%3A8976%2Foauth%2Fcallback&scope=account%3Aread%20user%3Aread%20workers%3Awrite%20workers_kv%3Awrite%20workers_routes%3Awrite%20workers_scripts%3Awrite%20workers_tail%3Aread%20d1%3Awrite%20pages%3Awrite%20zone%3Aread%20ssl_certs%3Awrite%20ai%3Awrite%20queues%3Awrite%20pipelines%3Awrite%20secrets_store%3Awrite%20containers%3Awrite%20cloudchamber%3Awrite%20connectivity%3Aadmin%20offline_access&state=_LzlBxzV-LD_egvPDDAChOuNCMVE.W7_&code_challenge=7MNZ3TU6brYdTOOIYI0SxeaBaJiplbaSNqh5xP7YIu0&code_challenge_method=S256
+Successfully logged in.
+PS C:\Users\argha> wrangler generate markdownworker
+
+✘ [ERROR] Unknown arguments: generate, markdownworker
+
+
+wrangler
+
+COMMANDS
+  wrangler docs [search..]        📚 Open Wrangler's command documentation in your browser
+
+  wrangler init [name]            📥 Initialize a basic Worker
+  wrangler dev [script]           👂 Start a local server for developing your Worker
+  wrangler deploy [script]        🆙 Deploy a Worker to Cloudflare
+  wrangler setup                  🪄 Setup a project to work on Cloudflare [experimental]
+  wrangler deployments            🚢 List and view the current and past deployments for your Worker
+  wrangler rollback [version-id]  🔙 Rollback a deployment for a Worker
+  wrangler versions               🫧 List, view, upload and deploy Versions of your Worker to Cloudflare
+  wrangler triggers               🎯 Updates the triggers of your current deployment [experimental]
+  wrangler delete [script]        🗑 Delete a Worker from Cloudflare
+  wrangler tail [worker]          🦚 Start a log tailing session for a Worker
+  wrangler secret                 🤫 Generate a secret that can be referenced in a Worker
+  wrangler types [path]           📝 Generate types from your Worker configuration
+
+  wrangler kv                     🗂️ Manage Workers KV Namespaces
+  wrangler queues                 📬 Manage Workers Queues
+  wrangler r2                     📦 Manage R2 buckets & objects
+  wrangler d1                     🗄 Manage Workers D1 databases
+  wrangler vectorize              🧮 Manage Vectorize indexes
+  wrangler hyperdrive             🚀 Manage Hyperdrive databases
+  wrangler cert                   🪪 Manage client mTLS certificates and CA certificate chains used for secured connections [open beta]
+  wrangler pages                  ⚡️ Configure Cloudflare Pages
+  wrangler mtls-certificate       🪪 Manage certificates used for mTLS connections
+  wrangler containers             📦 Manage Containers [open beta]
+  wrangler pubsub                 📮 Manage Pub/Sub brokers [private beta]
+  wrangler dispatch-namespace     🏗️ Manage dispatch namespaces
+  wrangler ai                     🤖 Manage AI models
+  wrangler secrets-store          🔐 Manage the Secrets Store [open beta]
+  wrangler workflows              🔁 Manage Workflows
+  wrangler pipelines              🚰 Manage Cloudflare Pipelines [open beta]
+  wrangler vpc                    🌐 Manage VPC [open beta]
+  wrangler login                  🔓 Login to Cloudflare
+  wrangler logout                 🚪 Logout from Cloudflare
+  wrangler whoami                 🕵️ Retrieve your user information
+  wrangler auth                   🔐 Manage authentication
+
+GLOBAL FLAGS
+  -c, --config    Path to Wrangler configuration file  [string]
+      --cwd       Run as if Wrangler was started in the specified directory instead of the current working directory  [string]
+  -e, --env       Environment to use for operations, and for selecting .env and .dev.vars files  [string]
+      --env-file  Path to an .env file to load - can be specified multiple times - values from earlier files are overridden by values in later files  [array]
+  -h, --help      Show help  [boolean]
+  -v, --version   Show version number  [boolean]
+
+Please report any issues to https://github.com/cloudflare/workers-sdk/issues/new/choose
+🪵  Logs were written to "C:\Users\argha\AppData\Roaming\xdg.config\.wrangler\logs\wrangler-2026-01-07_12-41-53_884.log"
+PS C:\Users\argha> cd markdownworker
+cd : Cannot find path 'C:\Users\argha\markdownworker' because it does not exist.
+At line:1 char:1
++ cd markdownworker
++ ~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (C:\Users\argha\markdownworker:String) [Set-Location], ItemNotFoundExcep
+   tion
+    + FullyQualifiedErrorId : PathNotFound,Microsoft.PowerShell.Commands.SetLocationCommand
+
+PS C:\Users\argha> wrangler init markdownworker
+
+ ⛅️ wrangler 4.57.0
+───────────────────
+🌀 Running `npm create cloudflare@^2.5.0 markdownworker --`...
+Need to install the following packages:
+create-cloudflare@2.62.0
+Ok to proceed? (y) y
+
+
+> npx
+> create-cloudflare markdownworker
+
+
+──────────────────────────────────────────────────────────────────────────────────────────────────────────
+👋 Welcome to create-cloudflare v2.62.0!
+🧡 Let's get started.
+📊 Cloudflare collects telemetry about your usage of Create-Cloudflare.
+
+Learn more at: https://github.com/cloudflare/workers-sdk/blob/main/packages/create-cloudflare/telemetry.md
+──────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+╭ Create an application with Cloudflare Step 1 of 3
+│
+├ In which directory do you want to create your application?
+│ dir ./markdownworker
+│
+├ What would you like to start with?
+│ category Hello World example
+│
+├ Which template would you like to use?
+│ type Worker only
+│
+├ Which language do you want to use?
+│ lang JavaScript
+│
+├ Copying template files
+│ files copied to project directory
+│
+├ Updating name in `package.json`
+│ updated `package.json`
+│
+├ Installing dependencies
+│ installed via `npm install`
+│
+╰ Application created
+
+╭ Configuring your application for Cloudflare Step 2 of 3
+│
+├ Installing wrangler A command line tool for building Cloudflare Workers
+│ installed via `npm install wrangler --save-dev`
+│
+├ Retrieving current workerd compatibility date
+│ compatibility date  Could not find workerd date, falling back to 2025-09-27
+│
+├ Do you want to use git for version control?
+│ yes git
+│
+├ Initializing git repo
+│ initialized git
+│
+├ Committing new files
+│ git commit
+│
+╰ Application configured
+
+╭ Deploy with Cloudflare Step 3 of 3
+│
+├ Do you want to deploy your application?
+│ yes deploy via `npm run deploy`
+│
+├ Logging into Cloudflare checking authentication status
+│ logged in
+│
+├ Selecting Cloudflare account retrieving accounts
+│ account Abantyghosh6@gmail.com's Account
+│
+
+> markdownworker@0.0.0 deploy
+> wrangler deploy
+
+
+Cloudflare collects anonymous telemetry about your usage of Wrangler. Learn more at https://github.com/cloudflare/workers-sdk/tree/main/packages/wrangler/telemetry.md
+
+ ⛅️ wrangler 4.57.0
+───────────────────
+Total Upload: 0.19 KiB / gzip: 0.16 KiB
+Uploaded markdownworker (5.91 sec)
+▲ [WARNING] You need to register a workers.dev subdomain before publishing to workers.dev
+
+
+√ Would you like to register a workers.dev subdomain now? ... yes
+√ What would you like your workers.dev subdomain to be? It will be accessible at https://<subdomain>.workers.dev ... markdownworker123
+√ Creating a workers.dev subdomain for your account at https://markdownworker123.workers.dev. Ok to proceed? ... yes
+Success! It may take a few minutes for DNS records to update.
+Visit https://dash.cloudflare.com/7575382a6a261f0caef8febf3ca3044a/workers/subdomain to edit your workers.dev subdomain
+Deployed markdownworker triggers (105.88 sec)
+  https://markdownworker.markdownworker123.workers.dev
+Current Version ID: dc889e43-c743-4fb3-b380-5f94d5828f05
+├ Waiting for DNS to propagate. This might take a few minutes.
+│ DNS propagation complete.
+│
+╰  ERROR  Error: 18760000:error:0A000410:SSL routines:ssl3_read_bytes:sslv3 alert handshake failure:c:\ws\deps\openssl\openssl\ssl\record\rec_layer_s3.c:1605:SSL alert number 40
+
+┘ Waiting for deployment to become available (10s) .
+PS C:\Users\argha>
