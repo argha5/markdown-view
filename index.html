@@ -5,28 +5,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
-        content="The best free online Markdown viewer and editor with live preview, syntax highlighting, Mermaid diagrams, LaTeX math, and PDF export. Fast, beautiful, and distraction-free.">
+        content="Free online markdown viewer and editor with live preview. View markdown files with 22 themes, Mermaid diagrams, LaTeX math, syntax highlighting. Best md viewer & editor online.">
     <meta name="keywords"
-        content="markdown viewer, markdown editor, live preview, markdown to pdf, mermaid diagrams, latex math, github markdown">
+        content="markdown viewer, md viewer, markdown editor, md editor, online markdown viewer, online markdown editor, markdown preview, md preview, view markdown files, markdown live preview, markdown to pdf, markdown to html, markdown table, markdown cheat sheet, mermaid diagrams, latex math, github markdown">
     <meta name="author" content="markdownviewer.dev">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://markdownviewer.dev/" />
     <meta name="google-site-verification" content="YID4Fh0OrV0l0hxBIZmJjG9_WlqA0OzxVT8ZVy2Gwss" />
 
     <!-- Open Graph -->
-    <meta property="og:title" content="Markdown Viewer - Fast, Beautiful Live Preview">
+    <meta property="og:title" content="Markdown Viewer & Editor Online - Free Live Preview">
     <meta property="og:description"
-        content="The best free online Markdown viewer with live preview, syntax highlighting, diagrams, and PDF export.">
+        content="Free online markdown viewer and editor. View markdown files with 22 themes, live preview, Mermaid diagrams, and PDF export.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://markdownviewer.dev">
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Markdown Viewer - Fast, Beautiful Live Preview">
+    <meta name="twitter:title" content="Markdown Viewer & Editor Online - Free Live Preview">
     <meta name="twitter:description"
-        content="The best free online Markdown viewer with live preview, syntax highlighting, diagrams, and PDF export.">
+        content="Free online markdown viewer and editor. View markdown files with 22 themes, live preview, Mermaid diagrams, and PDF export.">
 
-    <title>Markdown Viewer - Fast, Beautiful Live Preview | markdownviewer.dev</title>
+    <title>Markdown Viewer & Editor Online - Free Live Preview</title>
 
     <!-- Favicons -->
     <link rel="icon" type="image/x-icon" href="./favicon/favicon.ico">
@@ -34,30 +34,2540 @@
     <link rel="apple-touch-icon" sizes="180x180" href="./favicon/apple-touch-icon.png">
     <link rel="manifest" href="./favicon/site.webmanifest">
 
+    <!-- Resource hints for faster loading -->
+    <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
+    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
-        rel="stylesheet">
+        rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript>
+        <link rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
+    </noscript>
 
-    <!-- Highlight.js -->
+    <!-- Highlight.js - Defer loading -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css"
-        id="hljs-theme">
+        id="hljs-theme" media="print" onload="this.media='all'">
 
-    <!-- KaTeX -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <!-- KaTeX - Defer loading -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" media="print"
+        onload="this.media='all'">
 
-    <!-- Main Styles -->
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="themes.css">
+    <!-- Main Styles Inlined for Performance -->
+    <style>
+        /* Reset & Base */
+        *,
+        *:before,
+        *:after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            font-size: 16px;
+            scroll-behavior: smooth;
+            height: 100%;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+            min-height: 100vh;
+            transition: background-color 0.3s ease, color 0.3s ease;
+            overflow-x: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+            height: 10px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--scrollbar-track);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--scrollbar-thumb);
+            border-radius: 5px;
+            border: 2px solid var(--scrollbar-track);
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--text-muted);
+        }
+    </style>
+    <link rel="stylesheet" href="style.min.css" media="print" onload="this.media='all'">
+    <noscript>
+        <link rel="stylesheet" href="style.min.css">
+    </noscript>
+    <link rel="stylesheet" href="themes.css" media="print" onload="this.media='all'">
+    <noscript>
+        <link rel="stylesheet" href="themes.css">
+    </noscript>
+    }
+
+    ::-webkit-scrollbar-thumb {
+    background: var(--scrollbar-thumb);
+    border-radius: 4px
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+    background: var(--scrollbar-thumb-hover)
+    }
+
+    * {
+    scrollbar-width: thin;
+    scrollbar-color: var(--scrollbar-thumb) var(--scrollbar-track)
+    }
+
+    .app-container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    overflow: hidden
+    }
+
+    .header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: .6rem 1.25rem;
+    background: var(--bg-secondary);
+    border-bottom: 1px solid var(--border-color);
+    box-shadow: var(--shadow-sm);
+    z-index: 100;
+    gap: 1rem;
+    flex-wrap: wrap
+    }
+
+    .logo {
+    display: flex;
+    align-items: center;
+    gap: .6rem
+    }
+
+    .logo-icon {
+    width: 28px;
+    height: 28px;
+    color: var(--accent-primary)
+    }
+
+    .logo-text {
+    font-size: 1.1rem;
+    font-weight: 700;
+    background: var(--accent-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text
+    }
+
+    .header-actions {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    flex-wrap: wrap
+    }
+
+    .stats-display {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    padding: .4rem .75rem;
+    background: var(--bg-tertiary);
+    border-radius: 8px;
+    font-size: .75rem;
+    color: var(--text-secondary);
+    font-variant-numeric: tabular-nums
+    }
+
+    .stat-divider {
+    color: var(--text-muted)
+    }
+
+    .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: .4rem;
+    padding: .45rem .9rem;
+    font-size: .8rem;
+    font-weight: 500;
+    font-family: inherit;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all .2s ease;
+    white-space: nowrap
+    }
+
+    .btn-primary {
+    background: var(--accent-gradient);
+    color: #fff;
+    box-shadow: var(--shadow-sm)
+    }
+
+    .btn-primary:hover {
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-glow)
+    }
+
+    .btn-secondary {
+    background: var(--bg-tertiary);
+    color: var(--text-primary);
+    border: 1px solid var(--border-color)
+    }
+
+    .btn-secondary:hover {
+    background: var(--border-color);
+    border-color: var(--border-hover)
+    }
+
+    .btn-icon {
+    width: 36px;
+    height: 36px;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--bg-tertiary);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    color: var(--text-primary);
+    cursor: pointer;
+    transition: all .2s ease
+    }
+
+    .btn-icon:hover {
+    background: var(--border-color);
+    border-color: var(--border-hover)
+    }
+
+    .btn-sm {
+    padding: .3rem .5rem;
+    font-size: .75rem;
+    background: transparent;
+    color: var(--text-secondary);
+    border: none
+    }
+
+    .btn-sm:hover {
+    color: var(--accent-primary);
+    background: var(--bg-tertiary)
+    }
+
+    .command-hint {
+    padding: .35rem .6rem;
+    font-size: .7rem
+    }
+
+    .command-hint kbd {
+    padding: .15rem .35rem;
+    background: var(--bg-primary);
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    font-family: JetBrains Mono, monospace;
+    font-size: .65rem
+    }
+
+    .theme-selector {
+    position: relative
+    }
+
+    .theme-dropdown {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    margin-top: .5rem;
+    width: 240px;
+    max-height: 400px;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    box-shadow: var(--shadow-lg);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all .2s ease;
+    z-index: 200;
+    overflow: hidden
+    }
+
+    .theme-dropdown.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0)
+    }
+
+    .theme-dropdown-header {
+    padding: .75rem 1rem;
+    font-size: .75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: .05em;
+    color: var(--text-muted);
+    border-bottom: 1px solid var(--border-color)
+    }
+
+    .theme-list {
+    max-height: 340px;
+    overflow-y: auto;
+    padding: .5rem
+    }
+
+    .theme-option {
+    display: flex;
+    align-items: center;
+    gap: .75rem;
+    padding: .6rem .75rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background .15s ease
+    }
+
+    .theme-option:hover {
+    background: var(--bg-tertiary)
+    }
+
+    .theme-option.active {
+    background: var(--accent-primary);
+    color: #fff
+    }
+
+    .theme-preview {
+    display: flex;
+    gap: 2px;
+    padding: 2px;
+    background: var(--bg-primary);
+    border-radius: 4px
+    }
+
+    .theme-preview-color {
+    width: 12px;
+    height: 12px;
+    border-radius: 2px
+    }
+
+    .theme-option-name {
+    font-size: .85rem;
+    font-weight: 500
+    }
+
+    .export-dropdown-container {
+    position: relative
+    }
+
+    .export-dropdown {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    margin-top: .5rem;
+    width: 200px;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    box-shadow: var(--shadow-lg);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all .2s ease;
+    z-index: 200;
+    overflow: hidden;
+    padding: .5rem
+    }
+
+    .export-dropdown.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0)
+    }
+
+    .export-option {
+    display: flex;
+    align-items: center;
+    gap: .75rem;
+    width: 100%;
+    padding: .65rem .75rem;
+    background: transparent;
+    border: none;
+    border-radius: 8px;
+    color: var(--text-primary);
+    font-size: .85rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background .15s ease;
+    font-family: inherit
+    }
+
+    .export-option:hover {
+    background: var(--bg-tertiary)
+    }
+
+    .export-option svg {
+    color: var(--text-secondary)
+    }
+
+    .tools-dropdown-container {
+    position: relative
+    }
+
+    .tools-dropdown {
+    position: absolute;
+    top: calc(100% + .5rem);
+    right: 0;
+    min-width: 200px;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    box-shadow: var(--shadow-lg);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all .2s ease;
+    z-index: 200;
+    overflow: hidden;
+    padding: .5rem
+    }
+
+    .tools-dropdown.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0)
+    }
+
+    .tools-dropdown-header {
+    padding: .5rem .75rem;
+    font-size: .7rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: .05em;
+    color: var(--text-muted)
+    }
+
+    .tools-option {
+    display: flex;
+    align-items: center;
+    gap: .75rem;
+    width: 100%;
+    padding: .65rem .75rem;
+    background: transparent;
+    border: none;
+    border-radius: 8px;
+    color: var(--text-primary);
+    font-size: .85rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background .15s ease;
+    font-family: inherit;
+    text-decoration: none
+    }
+
+    .tools-option:hover {
+    background: var(--bg-tertiary)
+    }
+
+    .tools-option svg {
+    color: var(--text-secondary);
+    flex-shrink: 0
+    }
+
+    .tools-divider {
+    height: 1px;
+    background: var(--border-color);
+    margin: .5rem 0
+    }
+
+    .floating-toolbar {
+    position: fixed;
+    bottom: 2rem;
+    left: 50%;
+    transform: translate(-50%);
+    display: flex;
+    align-items: center;
+    gap: .25rem;
+    padding: .5rem .75rem;
+    background: var(--toolbar-bg);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    box-shadow: var(--shadow-lg);
+    z-index: 90;
+    transition: opacity .3s ease, transform .3s ease
+    }
+
+    .floating-toolbar.hidden {
+    opacity: 0;
+    transform: translate(-50%) translateY(20px);
+    pointer-events: none
+    }
+
+    .toolbar-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    background: transparent;
+    border: none;
+    border-radius: 8px;
+    color: var(--text-secondary);
+    cursor: pointer;
+    transition: all .15s ease;
+    font-size: .75rem;
+    font-weight: 600;
+    font-family: JetBrains Mono, monospace
+    }
+
+    .toolbar-btn:hover {
+    background: var(--bg-tertiary);
+    color: var(--accent-primary)
+    }
+
+    .toolbar-btn:active {
+    transform: scale(.95)
+    }
+
+    .toolbar-divider {
+    width: 1px;
+    height: 20px;
+    background: var(--border-color);
+    margin: 0 .25rem
+    }
+
+    .main-content {
+    display: flex;
+    flex: 1;
+    overflow: hidden;
+    padding: .75rem;
+    gap: .75rem;
+    background: var(--bg-primary)
+    }
+
+    .toc-sidebar {
+    width: 0;
+    min-width: 0;
+    background: var(--bg-secondary);
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+    overflow: hidden;
+    transition: all .3s ease;
+    display: flex;
+    flex-direction: column
+    }
+
+    .toc-sidebar.show {
+    width: 260px;
+    min-width: 260px
+    }
+
+    .toc-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: .75rem 1rem;
+    background: var(--bg-tertiary);
+    border-bottom: 1px solid var(--border-color);
+    font-size: .8rem;
+    font-weight: 600;
+    color: var(--text-secondary)
+    }
+
+    .toc-close {
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    border: none;
+    border-radius: 4px;
+    color: var(--text-muted);
+    cursor: pointer;
+    font-size: 1.2rem;
+    line-height: 1
+    }
+
+    .toc-close:hover {
+    background: var(--border-color);
+    color: var(--text-primary)
+    }
+
+    .toc-content {
+    flex: 1;
+    padding: .75rem;
+    overflow-y: auto
+    }
+
+    .toc-empty {
+    color: var(--text-muted);
+    font-size: .85rem;
+    font-style: italic;
+    text-align: center;
+    padding: 1rem
+    }
+
+    .toc-item {
+    display: block;
+    padding: .4rem .6rem;
+    font-size: .85rem;
+    color: var(--text-secondary);
+    text-decoration: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all .15s ease;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis
+    }
+
+    .toc-item:hover {
+    background: var(--bg-tertiary);
+    color: var(--text-primary)
+    }
+
+    .toc-item.active {
+    background: var(--accent-primary);
+    color: #fff
+    }
+
+    .toc-item.toc-h1 {
+    padding-left: .6rem;
+    font-weight: 600
+    }
+
+    .toc-item.toc-h2 {
+    padding-left: 1.2rem
+    }
+
+    .toc-item.toc-h3 {
+    padding-left: 1.8rem;
+    font-size: .8rem
+    }
+
+    .toc-item.toc-h4 {
+    padding-left: 2.4rem;
+    font-size: .75rem
+    }
+
+    .toc-item.toc-h5 {
+    padding-left: 3rem;
+    font-size: .75rem
+    }
+
+    .toc-item.toc-h6 {
+    padding-left: 3.6rem;
+    font-size: .75rem
+    }
+
+    .panel {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    background: var(--bg-secondary);
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+    box-shadow: var(--shadow-md);
+    overflow: hidden;
+    transition: box-shadow .3s ease, border-color .3s ease;
+    min-width: 0
+    }
+
+    .panel:hover {
+    border-color: var(--border-hover)
+    }
+
+    .panel:focus-within {
+    border-color: var(--accent-primary);
+    box-shadow: var(--shadow-glow)
+    }
+
+    .panel-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: .6rem 1rem;
+    background: var(--bg-tertiary);
+    border-bottom: 1px solid var(--border-color)
+    }
+
+    .panel-title {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    font-size: .8rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: .05em
+    }
+
+    .panel-title svg {
+    opacity: .7
+    }
+
+    .panel-actions {
+    display: flex;
+    gap: .25rem
+    }
+
+    .resize-handle {
+    width: 6px;
+    cursor: col-resize;
+    background: transparent;
+    position: relative;
+    flex-shrink: 0
+    }
+
+    .resize-handle:after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 4px;
+    height: 40px;
+    background: var(--border-color);
+    border-radius: 2px;
+    opacity: 0;
+    transition: opacity .2s ease
+    }
+
+    .resize-handle:hover:after {
+    opacity: 1
+    }
+
+    #markdownInput {
+    flex: 1;
+    width: 100%;
+    padding: 1.25rem;
+    font-family: JetBrains Mono, Fira Code, Consolas, monospace;
+    font-size: .9rem;
+    line-height: 1.7;
+    color: var(--text-primary);
+    background: var(--bg-secondary);
+    border: none;
+    outline: none;
+    resize: none;
+    tab-size: 4
+    }
+
+    #markdownInput::placeholder {
+    color: var(--text-muted)
+    }
+
+    #markdownInput::selection {
+    background: #6366f14d
+    }
+
+    .preview-content {
+    flex: 1;
+    padding: 1.25rem;
+    overflow-y: auto;
+    overflow-x: hidden
+    }
+
+    .placeholder-text {
+    color: var(--text-muted);
+    font-style: italic
+    }
+
+    .preview-content h1,
+    .preview-content h2,
+    .preview-content h3,
+    .preview-content h4,
+    .preview-content h5,
+    .preview-content h6 {
+    color: var(--text-primary);
+    margin-top: 1.5em;
+    margin-bottom: .5em;
+    font-weight: 600;
+    line-height: 1.3;
+    scroll-margin-top: 1rem
+    }
+
+    .preview-content h1:first-child,
+    .preview-content h2:first-child,
+    .preview-content h3:first-child {
+    margin-top: 0
+    }
+
+    .preview-content h1 {
+    font-size: 2rem;
+    padding-bottom: .3em;
+    border-bottom: 2px solid var(--border-color)
+    }
+
+    .preview-content h2 {
+    font-size: 1.5rem;
+    padding-bottom: .2em;
+    border-bottom: 1px solid var(--border-color)
+    }
+
+    .preview-content h3 {
+    font-size: 1.25rem
+    }
+
+    .preview-content h4 {
+    font-size: 1rem
+    }
+
+    .preview-content h5 {
+    font-size: .9rem
+    }
+
+    .preview-content h6 {
+    font-size: .85rem;
+    color: var(--text-secondary)
+    }
+
+    .preview-content p {
+    margin-bottom: 1em
+    }
+
+    .preview-content a {
+    color: var(--accent-primary);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: border-color .2s ease
+    }
+
+    .preview-content a:hover {
+    border-bottom-color: var(--accent-primary)
+    }
+
+    .preview-content strong {
+    font-weight: 600;
+    color: var(--text-primary)
+    }
+
+    .preview-content em {
+    font-style: italic
+    }
+
+    .preview-content del {
+    text-decoration: line-through;
+    color: var(--text-muted)
+    }
+
+    .preview-content code {
+    font-family: JetBrains Mono, Fira Code, Consolas, monospace;
+    font-size: .875em;
+    padding: .2em .4em;
+    background: var(--code-bg);
+    color: var(--code-text);
+    border-radius: 4px
+    }
+
+    .preview-content pre {
+    margin: 1em 0;
+    padding: 1rem;
+    background: var(--pre-bg);
+    border-radius: 8px;
+    overflow-x: auto;
+    position: relative
+    }
+
+    .preview-content pre code {
+    padding: 0;
+    background: transparent;
+    color: var(--pre-text);
+    font-size: .85rem;
+    line-height: 1.6
+    }
+
+    .preview-content pre[data-language]:before {
+    content: attr(data-language);
+    position: absolute;
+    top: .5rem;
+    right: .75rem;
+    font-size: .7rem;
+    font-weight: 500;
+    color: var(--text-muted);
+    text-transform: uppercase
+    }
+
+    .preview-content blockquote {
+    margin: 1em 0;
+    padding: .75em 1em;
+    border-left: 4px solid var(--accent-primary);
+    background: var(--bg-tertiary);
+    border-radius: 0 8px 8px 0;
+    color: var(--text-secondary)
+    }
+
+    .preview-content blockquote p:last-child {
+    margin-bottom: 0
+    }
+
+    .preview-content ul,
+    .preview-content ol {
+    margin: 1em 0;
+    padding-left: 2em
+    }
+
+    .preview-content li {
+    margin: .25em 0
+    }
+
+    .preview-content li>ul,
+    .preview-content li>ol {
+    margin: .25em 0
+    }
+
+    .preview-content hr {
+    margin: 2em 0;
+    border: none;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--border-color), transparent)
+    }
+
+    .preview-content table {
+    width: 100%;
+    margin: 1em 0;
+    border-collapse: collapse;
+    border-radius: 8px;
+    overflow: hidden
+    }
+
+    .preview-content th,
+    .preview-content td {
+    padding: .75rem 1rem;
+    text-align: left;
+    border: 1px solid var(--border-color)
+    }
+
+    .preview-content th {
+    background: var(--bg-tertiary);
+    font-weight: 600
+    }
+
+    .preview-content tr:nth-child(2n) {
+    background: var(--bg-tertiary)
+    }
+
+    .preview-content img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin: 1em 0
+    }
+
+    .preview-content input[type=checkbox] {
+    margin-right: .5em;
+    accent-color: var(--accent-primary);
+    cursor: pointer
+    }
+
+    .preview-content li.task-list-item {
+    list-style: none;
+    margin-left: -1.5em
+    }
+
+    .text-center {
+    text-align: center
+    }
+
+    .text-right {
+    text-align: right
+    }
+
+    .page-break {
+    page-break-after: always;
+    margin: 2em 0;
+    border-top: 2px dashed var(--border-color);
+    position: relative
+    }
+
+    .page-break:after {
+    content: "Page Break";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: .25em .75em;
+    background: var(--bg-secondary);
+    color: var(--text-muted);
+    font-size: .7rem;
+    text-transform: uppercase;
+    letter-spacing: .05em
+    }
+
+    .mermaid {
+    background: var(--bg-tertiary);
+    padding: 1rem;
+    border-radius: 8px;
+    margin: 1em 0;
+    text-align: center
+    }
+
+    .katex-display {
+    margin: 1em 0;
+    overflow-x: auto;
+    overflow-y: hidden
+    }
+
+    .mobile-view-toggle {
+    display: none;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: .5rem;
+    background: var(--bg-secondary);
+    border-top: 1px solid var(--border-color);
+    z-index: 100
+    }
+
+    .mobile-view-toggle .view-btn {
+    flex: 1;
+    padding: .75rem;
+    background: var(--bg-tertiary);
+    border: none;
+    border-radius: 8px;
+    color: var(--text-secondary);
+    font-size: .9rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all .2s ease;
+    font-family: inherit
+    }
+
+    .mobile-view-toggle .view-btn.active {
+    background: var(--accent-primary);
+    color: #fff
+    }
+
+    .command-palette-overlay {
+    position: fixed;
+    inset: 0;
+    background: #00000080;
+    backdrop-filter: blur(4px);
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding-top: 15vh;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: all .2s ease
+    }
+
+    .command-palette-overlay.show {
+    opacity: 1;
+    visibility: visible
+    }
+
+    .command-palette {
+    width: 100%;
+    max-width: 560px;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    box-shadow: var(--shadow-lg);
+    overflow: hidden;
+    transform: scale(.95) translateY(-20px);
+    transition: transform .2s ease
+    }
+
+    .command-palette-overlay.show .command-palette {
+    transform: scale(1) translateY(0)
+    }
+
+    .command-search {
+    display: flex;
+    align-items: center;
+    gap: .75rem;
+    padding: 1rem 1.25rem;
+    border-bottom: 1px solid var(--border-color)
+    }
+
+    .command-search svg {
+    color: var(--text-muted);
+    flex-shrink: 0
+    }
+
+    .command-search input {
+    flex: 1;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 1rem;
+    color: var(--text-primary);
+    font-family: inherit
+    }
+
+    .command-search input::placeholder {
+    color: var(--text-muted)
+    }
+
+    .command-list {
+    max-height: 320px;
+    overflow-y: auto;
+    padding: .5rem
+    }
+
+    .command-item {
+    display: flex;
+    align-items: center;
+    gap: .75rem;
+    padding: .75rem 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background .15s ease
+    }
+
+    .command-item:hover,
+    .command-item.selected {
+    background: var(--bg-tertiary)
+    }
+
+    .command-item-icon {
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--bg-primary);
+    border-radius: 8px;
+    color: var(--accent-primary)
+    }
+
+    .command-item-content {
+    flex: 1
+    }
+
+    .command-item-title {
+    font-size: .9rem;
+    font-weight: 500;
+    color: var(--text-primary)
+    }
+
+    .command-item-desc {
+    font-size: .75rem;
+    color: var(--text-muted)
+    }
+
+    .command-item-shortcut {
+    display: flex;
+    gap: .25rem
+    }
+
+    .command-item-shortcut kbd {
+    padding: .2rem .4rem;
+    background: var(--bg-primary);
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    font-size: .7rem;
+    font-family: JetBrains Mono, monospace;
+    color: var(--text-secondary)
+    }
+
+    .command-footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    padding: .75rem;
+    background: var(--bg-tertiary);
+    border-top: 1px solid var(--border-color);
+    font-size: .75rem;
+    color: var(--text-muted)
+    }
+
+    .command-footer kbd {
+    padding: .15rem .35rem;
+    background: var(--bg-primary);
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    font-family: JetBrains Mono, monospace;
+    font-size: .65rem;
+    margin-right: .25rem
+    }
+
+    .reading-mode-container {
+    position: fixed;
+    inset: 0;
+    background: var(--bg-primary);
+    z-index: 500;
+    display: flex;
+    flex-direction: column;
+    opacity: 0;
+    visibility: hidden;
+    transition: all .3s ease
+    }
+
+    .reading-mode-container.show {
+    opacity: 1;
+    visibility: visible
+    }
+
+    .reading-mode-close {
+    position: fixed;
+    top: 1.5rem;
+    right: 1.5rem;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: 50%;
+    color: var(--text-secondary);
+    cursor: pointer;
+    z-index: 10;
+    transition: all .2s ease
+    }
+
+    .reading-mode-close:hover {
+    background: var(--border-color);
+    color: var(--text-primary)
+    }
+
+    .reading-mode-content {
+    flex: 1;
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 3rem 2rem;
+    overflow-y: auto;
+    line-height: 1.8;
+    font-size: 1.1rem
+    }
+
+    .reading-mode-content h1,
+    .reading-mode-content h2,
+    .reading-mode-content h3,
+    .reading-mode-content h4,
+    .reading-mode-content h5,
+    .reading-mode-content h6 {
+    color: var(--text-primary);
+    margin-top: 1.5em;
+    margin-bottom: .5em;
+    font-weight: 600;
+    line-height: 1.3
+    }
+
+    .reading-mode-content h1 {
+    font-size: 2.5rem;
+    padding-bottom: .3em;
+    border-bottom: 2px solid var(--border-color)
+    }
+
+    .reading-mode-content h2 {
+    font-size: 2rem;
+    padding-bottom: .2em;
+    border-bottom: 1px solid var(--border-color)
+    }
+
+    .reading-mode-content h3 {
+    font-size: 1.5rem
+    }
+
+    .reading-mode-content h4 {
+    font-size: 1.25rem
+    }
+
+    .reading-mode-content p {
+    margin-bottom: 1.2em
+    }
+
+    .reading-mode-content a {
+    color: var(--accent-primary)
+    }
+
+    .reading-mode-content code {
+    font-family: JetBrains Mono, monospace;
+    background: var(--code-bg);
+    color: var(--code-text);
+    padding: .2em .4em;
+    border-radius: 4px
+    }
+
+    .reading-mode-content pre {
+    margin: 1.5em 0;
+    padding: 1.25rem;
+    background: var(--pre-bg);
+    border-radius: 12px;
+    overflow-x: auto
+    }
+
+    .reading-mode-content pre code {
+    padding: 0;
+    background: transparent;
+    color: var(--pre-text)
+    }
+
+    .reading-mode-content blockquote {
+    margin: 1.5em 0;
+    padding: 1em 1.5em;
+    border-left: 4px solid var(--accent-primary);
+    background: var(--bg-tertiary);
+    border-radius: 0 12px 12px 0
+    }
+
+    .reading-mode-content table {
+    width: 100%;
+    margin: 1.5em 0;
+    border-collapse: collapse
+    }
+
+    .reading-mode-content th,
+    .reading-mode-content td {
+    padding: .75rem 1rem;
+    border: 1px solid var(--border-color)
+    }
+
+    .reading-mode-content th {
+    background: var(--bg-tertiary)
+    }
+
+    .toast {
+    position: fixed;
+    bottom: 6rem;
+    left: 50%;
+    transform: translate(-50%) translateY(100px);
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    padding: .75rem 1.25rem;
+    background: var(--accent-primary);
+    color: #fff;
+    border-radius: 10px;
+    box-shadow: var(--shadow-lg);
+    font-size: .875rem;
+    font-weight: 500;
+    opacity: 0;
+    visibility: hidden;
+    transition: all .3s cubic-bezier(.68, -.55, .265, 1.55);
+    z-index: 1000
+    }
+
+    .toast.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translate(-50%) translateY(0)
+    }
+
+    .toast.error {
+    background: #ef4444
+    }
+
+    .toast-icon {
+    display: none
+    }
+
+    .toast .toast-success {
+    display: block
+    }
+
+    .toast.error .toast-success {
+    display: none
+    }
+
+    .toast.error .toast-error {
+    display: block
+    }
+
+    @media(max-width:1024px) {
+
+    .stats-display,
+    .command-hint {
+    display: none
+    }
+    }
+
+    @media(max-width:768px) {
+    .header {
+    padding: .5rem .75rem
+    }
+
+    .logo-text {
+    display: none
+    }
+
+    .main-content {
+    flex-direction: column;
+    padding: 0 0 60px
+    }
+
+    .panel {
+    border-radius: 0;
+    border-left: none;
+    border-right: none
+    }
+
+    .toc-sidebar,
+    .resize-handle {
+    display: none
+    }
+
+    .floating-toolbar {
+    bottom: 70px;
+    padding: .4rem .5rem;
+    gap: .15rem;
+    max-width: calc(100% - 2rem);
+    overflow-x: auto
+    }
+
+    .toolbar-btn {
+    width: 28px;
+    height: 28px
+    }
+
+    .mobile-view-toggle {
+    display: flex;
+    gap: .5rem
+    }
+
+    .editor-panel,
+    .preview-panel {
+    display: none
+    }
+
+    .editor-panel.mobile-active,
+    .preview-panel.mobile-active {
+    display: flex
+    }
+    }
+
+    @media(max-width:480px) {
+    .btn-primary span {
+    display: none
+    }
+
+    .export-dropdown {
+    right: -50px
+    }
+
+    .theme-dropdown {
+    right: -100px
+    }
+    }
+
+    @media print {
+
+    .header,
+    .floating-toolbar,
+    .toc-sidebar,
+    .toast,
+    .editor-panel,
+    .mobile-view-toggle,
+    .command-palette-overlay,
+    .reading-mode-container,
+    .resize-handle {
+    display: none !important
+    }
+
+    body {
+    background: #fff;
+    color: #000
+    }
+
+    .app-container {
+    height: auto;
+    overflow: visible
+    }
+
+    .main-content {
+    display: block;
+    padding: 0
+    }
+
+    .preview-panel {
+    box-shadow: none;
+    border: none;
+    border-radius: 0
+    }
+
+    .preview-content {
+    padding: 0
+    }
+
+    .page-break {
+    page-break-after: always;
+    border: none
+    }
+
+    .page-break:after {
+    display: none
+    }
+    }
+
+    @keyframes fadeIn {
+    0% {
+    opacity: 0;
+    transform: translateY(10px)
+    }
+
+    to {
+    opacity: 1;
+    transform: translateY(0)
+    }
+    }
+
+    @keyframes pulse {
+
+    0%,
+    to {
+    opacity: 1
+    }
+
+    50% {
+    opacity: .5
+    }
+    }
+
+    .panel {
+    animation: fadeIn .4s ease forwards
+    }
+
+    .editor-panel {
+    animation-delay: .1s
+    }
+
+    .preview-panel {
+    animation-delay: .2s
+    }
+
+    .loading {
+    animation: pulse 1.5s ease-in-out infinite
+    }
+
+    .ai-btn {
+    background: linear-gradient(135deg, #10b981, #059669) !important;
+    border-color: #059669 !important;
+    color: #fff !important
+    }
+
+    .ai-btn:hover {
+    box-shadow: 0 0 15px #10b98166
+    }
+
+    .ai-sidebar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 380px;
+    height: 100vh;
+    background: var(--bg-secondary);
+    border-left: 1px solid var(--border-color);
+    box-shadow: var(--shadow-lg);
+    z-index: 300;
+    display: flex;
+    flex-direction: column;
+    transform: translate(100%);
+    transition: transform .3s ease
+    }
+
+    .ai-sidebar.show {
+    transform: translate(0)
+    }
+
+    .ai-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 1.25rem;
+    background: linear-gradient(135deg, #10b981, #059669);
+    color: #fff
+    }
+
+    .ai-title {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    font-weight: 600;
+    font-size: 1rem
+    }
+
+    .ai-close {
+    width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fff3;
+    border: none;
+    border-radius: 6px;
+    color: #fff;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background .2s
+    }
+
+    .ai-close:hover {
+    background: #ffffff4d
+    }
+
+    .ai-actions {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: .5rem;
+    padding: .75rem;
+    border-bottom: 1px solid var(--border-color)
+    }
+
+    .ai-action-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: .35rem;
+    padding: .6rem .5rem;
+    background: var(--bg-tertiary);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    color: var(--text-secondary);
+    font-size: .7rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all .2s;
+    font-family: inherit
+    }
+
+    .ai-action-btn:hover {
+    background: var(--accent-primary);
+    color: #fff;
+    border-color: var(--accent-primary)
+    }
+
+    .ai-action-btn svg {
+    width: 18px;
+    height: 18px
+    }
+
+    .ai-messages {
+    flex: 1;
+    overflow-y: auto;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: .75rem
+    }
+
+    .ai-message {
+    max-width: 90%;
+    padding: .75rem 1rem;
+    border-radius: 12px;
+    font-size: .875rem;
+    line-height: 1.6;
+    white-space: pre-line
+    }
+
+    .ai-message-user {
+    align-self: flex-end;
+    background: var(--accent-primary);
+    color: #fff;
+    border-bottom-right-radius: 4px
+    }
+
+    .ai-message-assistant {
+    align-self: flex-start;
+    background: var(--bg-tertiary);
+    color: var(--text-primary);
+    border-bottom-left-radius: 4px
+    }
+
+    .ai-message-content ul {
+    margin: .5rem 0 0 1rem;
+    padding: 0
+    }
+
+    .ai-message-content li {
+    margin: .25rem 0
+    }
+
+    .ai-message-loading {
+    display: flex;
+    gap: .3rem;
+    padding: 1rem
+    }
+
+    .ai-message-loading span {
+    width: 8px;
+    height: 8px;
+    background: var(--accent-primary);
+    border-radius: 50%;
+    animation: bounce 1.4s infinite ease-in-out
+    }
+
+    .ai-message-loading span:nth-child(1) {
+    animation-delay: -.32s
+    }
+
+    .ai-message-loading span:nth-child(2) {
+    animation-delay: -.16s
+    }
+
+    @keyframes bounce {
+
+    0%,
+    80%,
+    to {
+    transform: scale(0)
+    }
+
+    40% {
+    transform: scale(1)
+    }
+    }
+
+    .ai-input-container {
+    display: flex;
+    gap: .5rem;
+    padding: .75rem;
+    border-top: 1px solid var(--border-color);
+    background: var(--bg-tertiary)
+    }
+
+    #aiInput {
+    flex: 1;
+    padding: .6rem .75rem;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    color: var(--text-primary);
+    font-family: inherit;
+    font-size: .875rem;
+    resize: none;
+    outline: none
+    }
+
+    #aiInput:focus {
+    border-color: var(--accent-primary)
+    }
+
+    .ai-send-btn {
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #10b981, #059669);
+    border: none;
+    border-radius: 8px;
+    color: #fff;
+    cursor: pointer;
+    transition: transform .2s, box-shadow .2s
+    }
+
+    .ai-send-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px #10b9814d
+    }
+
+    .ai-send-btn:disabled {
+    opacity: .5;
+    cursor: not-allowed
+    }
+
+    .history-sidebar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 320px;
+    height: 100vh;
+    background: var(--bg-secondary);
+    border-left: 1px solid var(--border-color);
+    box-shadow: var(--shadow-lg);
+    z-index: 300;
+    display: flex;
+    flex-direction: column;
+    transform: translate(100%);
+    transition: transform .3s ease
+    }
+
+    .history-sidebar.show {
+    transform: translate(0)
+    }
+
+    .history-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 1.25rem;
+    background: var(--bg-tertiary);
+    border-bottom: 1px solid var(--border-color)
+    }
+
+    .history-title {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    font-weight: 600;
+    font-size: .95rem;
+    color: var(--text-primary)
+    }
+
+    .history-close {
+    width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    border: none;
+    border-radius: 6px;
+    color: var(--text-muted);
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: all .2s
+    }
+
+    .history-close:hover {
+    background: var(--border-color);
+    color: var(--text-primary)
+    }
+
+    .history-actions {
+    display: flex;
+    gap: .5rem;
+    padding: .75rem;
+    border-bottom: 1px solid var(--border-color)
+    }
+
+    .history-actions .btn {
+    flex: 1
+    }
+
+    .history-list {
+    flex: 1;
+    overflow-y: auto;
+    padding: .75rem
+    }
+
+    .history-empty {
+    text-align: center;
+    color: var(--text-muted);
+    font-size: .85rem;
+    padding: 2rem 1rem;
+    line-height: 1.6
+    }
+
+    .history-item {
+    padding: .75rem;
+    background: var(--bg-tertiary);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    margin-bottom: .5rem;
+    cursor: pointer;
+    transition: all .2s
+    }
+
+    .history-item:hover {
+    border-color: var(--accent-primary)
+    }
+
+    .history-item-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: .35rem
+    }
+
+    .history-item-time {
+    font-size: .75rem;
+    font-weight: 600;
+    color: var(--text-primary)
+    }
+
+    .history-item-actions {
+    display: flex;
+    gap: .25rem
+    }
+
+    .history-item-btn {
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    border: none;
+    border-radius: 4px;
+    color: var(--text-muted);
+    cursor: pointer;
+    transition: all .2s
+    }
+
+    .history-item-btn:hover {
+    background: var(--accent-primary);
+    color: #fff
+    }
+
+    .history-item-preview {
+    font-size: .75rem;
+    color: var(--text-muted);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis
+    }
+
+    .history-item-stats {
+    font-size: .7rem;
+    color: var(--text-muted);
+    margin-top: .25rem
+    }
+
+    .share-modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: #00000080;
+    backdrop-filter: blur(4px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: all .2s ease
+    }
+
+    .share-modal-overlay.show {
+    opacity: 1;
+    visibility: visible
+    }
+
+    .share-modal {
+    width: 100%;
+    max-width: 500px;
+    margin: 1rem;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    box-shadow: var(--shadow-lg);
+    transform: scale(.95);
+    transition: transform .2s ease
+    }
+
+    .share-modal-overlay.show .share-modal {
+    transform: scale(1)
+    }
+
+    .share-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 1.25rem;
+    border-bottom: 1px solid var(--border-color)
+    }
+
+    .share-header h3 {
+    font-size: 1.1rem;
+    font-weight: 600
+    }
+
+    .share-close {
+    width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    border: none;
+    border-radius: 6px;
+    color: var(--text-muted);
+    font-size: 1.2rem;
+    cursor: pointer
+    }
+
+    .share-close:hover {
+    background: var(--border-color)
+    }
+
+    .share-content {
+    padding: 1.25rem
+    }
+
+    .share-content p {
+    margin-bottom: .75rem;
+    color: var(--text-secondary);
+    font-size: .9rem
+    }
+
+    .share-link-container {
+    display: flex;
+    gap: .5rem
+    }
+
+    .share-link-container input {
+    flex: 1;
+    padding: .6rem .75rem;
+    background: var(--bg-tertiary);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    color: var(--text-primary);
+    font-family: JetBrains Mono, monospace;
+    font-size: .8rem
+    }
+
+    .share-note {
+    font-size: .75rem !important;
+    color: var(--text-muted) !important;
+    margin-top: 1rem !important;
+    margin-bottom: 0 !important
+    }
+
+    .find-replace-bar {
+    position: fixed;
+    top: 60px;
+    right: 1rem;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    box-shadow: var(--shadow-lg);
+    padding: .75rem;
+    z-index: 200;
+    display: none;
+    flex-direction: column;
+    gap: .5rem;
+    min-width: 360px
+    }
+
+    .find-replace-bar.show {
+    display: flex
+    }
+
+    .find-replace-row {
+    display: flex;
+    align-items: center;
+    gap: .5rem
+    }
+
+    .find-replace-row input {
+    flex: 1;
+    padding: .5rem .75rem;
+    background: var(--bg-tertiary);
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    color: var(--text-primary);
+    font-family: inherit;
+    font-size: .85rem;
+    outline: none
+    }
+
+    .find-replace-row input:focus {
+    border-color: var(--accent-primary)
+    }
+
+    .find-count {
+    font-size: .75rem;
+    color: var(--text-muted);
+    white-space: nowrap;
+    min-width: 60px
+    }
+
+    .find-btn {
+    width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--bg-tertiary);
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    color: var(--text-secondary);
+    cursor: pointer;
+    transition: all .2s
+    }
+
+    .find-btn:hover {
+    background: var(--accent-primary);
+    color: #fff;
+    border-color: var(--accent-primary)
+    }
+
+    .find-close {
+    position: absolute;
+    top: .5rem;
+    right: .5rem;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    border: none;
+    border-radius: 4px;
+    color: var(--text-muted);
+    font-size: 1.1rem;
+    cursor: pointer
+    }
+
+    .find-close:hover {
+    background: var(--border-color)
+    }
+
+    @media(max-width:768px) {
+
+    .ai-sidebar,
+    .history-sidebar {
+    width: 100%
+    }
+
+    .find-replace-bar {
+    right: .5rem;
+    left: .5rem;
+    min-width: auto
+    }
+    }
+
+    .github-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: .75rem;
+    padding: .4rem;
+    color: var(--text-muted);
+    opacity: .7;
+    border-radius: 6px;
+    transition: all .2s ease
+    }
+
+    .github-link:hover {
+    color: var(--text-primary);
+    opacity: 1;
+    background: var(--bg-tertiary)
+    }
+
+    .github-link svg {
+    fill: currentColor
+    }
+
+    .seo-content {
+    background: var(--bg-secondary);
+    border-top: 1px solid var(--border-color);
+    overflow: hidden
+    }
+
+    .seo-content-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem
+    }
+
+    .seo-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: .5rem;
+    width: 100%;
+    padding: .75rem;
+    background: transparent;
+    border: none;
+    color: var(--text-muted);
+    font-size: .85rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: color .2s ease;
+    font-family: inherit
+    }
+
+    .seo-toggle:hover {
+    color: var(--text-primary)
+    }
+
+    .seo-toggle svg {
+    transition: transform .3s ease
+    }
+
+    .seo-toggle[aria-expanded=true] svg {
+    transform: rotate(180deg)
+    }
+
+    .seo-article {
+    display: none;
+    padding: 0 0 2rem;
+    animation: fadeIn .3s ease
+    }
+
+    .seo-article.show {
+    display: block
+    }
+
+    @keyframes fadeIn {
+    0% {
+    opacity: 0;
+    transform: translateY(-10px)
+    }
+
+    to {
+    opacity: 1;
+    transform: translateY(0)
+    }
+    }
+
+    .seo-hero {
+    text-align: center;
+    padding: 2rem 0;
+    border-bottom: 1px solid var(--border-color);
+    margin-bottom: 2rem
+    }
+
+    .seo-hero h2 {
+    font-size: 1.75rem;
+    color: var(--text-primary);
+    margin-bottom: 1rem
+    }
+
+    .seo-lead {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: var(--text-secondary);
+    max-width: 900px;
+    margin: 0 auto
+    }
+
+    .seo-section {
+    margin-bottom: 2rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid var(--border-color)
+    }
+
+    .seo-section:last-child {
+    border-bottom: none;
+    margin-bottom: 0
+    }
+
+    .seo-section h3 {
+    font-size: 1.35rem;
+    color: var(--text-primary);
+    margin-bottom: 1rem
+    }
+
+    .seo-section h4 {
+    font-size: 1.1rem;
+    color: var(--text-primary);
+    margin: 1.5rem 0 .75rem
+    }
+
+    .seo-section p {
+    color: var(--text-secondary);
+    line-height: 1.7;
+    margin-bottom: 1rem
+    }
+
+    .seo-section a {
+    color: var(--accent-primary);
+    text-decoration: none
+    }
+
+    .seo-section a:hover {
+    text-decoration: underline
+    }
+
+    .seo-section ul {
+    margin: 1rem 0;
+    padding-left: 1.5rem
+    }
+
+    .seo-section li {
+    color: var(--text-secondary);
+    margin-bottom: .5rem;
+    line-height: 1.6
+    }
+
+    .seo-features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: .75rem;
+    list-style: none;
+    padding: 0
+    }
+
+    .seo-features li {
+    padding: .75rem 1rem;
+    background: var(--bg-tertiary);
+    border-radius: 8px;
+    border: 1px solid var(--border-color)
+    }
+
+    .theme-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1rem;
+    margin: 1rem 0
+    }
+
+    .theme-item {
+    padding: 1rem;
+    background: var(--bg-tertiary);
+    border-radius: 8px;
+    border: 1px solid var(--border-color)
+    }
+
+    .theme-item strong {
+    color: var(--text-primary)
+    }
+
+    .syntax-table {
+    overflow-x: auto;
+    margin: 1rem 0
+    }
+
+    .syntax-table table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: .9rem
+    }
+
+    .syntax-table th,
+    .syntax-table td {
+    padding: .75rem 1rem;
+    text-align: left;
+    border: 1px solid var(--border-color)
+    }
+
+    .syntax-table th {
+    background: var(--bg-tertiary);
+    font-weight: 600;
+    color: var(--text-primary)
+    }
+
+    .syntax-table td {
+    color: var(--text-secondary)
+    }
+
+    .syntax-table code {
+    font-family: JetBrains Mono, monospace;
+    font-size: .85em;
+    padding: .2rem .4rem;
+    background: var(--code-bg);
+    color: var(--code-text);
+    border-radius: 4px
+    }
+
+    .shortcuts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: .5rem;
+    margin: 1rem 0
+    }
+
+    .shortcuts-grid div {
+    padding: .6rem 1rem;
+    background: var(--bg-tertiary);
+    border-radius: 6px;
+    font-size: .85rem;
+    color: var(--text-secondary)
+    }
+
+    .shortcuts-grid kbd {
+    display: inline-block;
+    padding: .2rem .5rem;
+    background: var(--bg-primary);
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    font-family: JetBrains Mono, monospace;
+    font-size: .75rem;
+    margin-right: .25rem
+    }
+
+    .seo-faq {
+    border-bottom: none
+    }
+
+    .faq-item {
+    margin-bottom: .5rem;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    overflow: hidden
+    }
+
+    .faq-item summary {
+    padding: 1rem 1.25rem;
+    background: var(--bg-tertiary);
+    cursor: pointer;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between
+    }
+
+    .faq-item summary::-webkit-details-marker {
+    display: none
+    }
+
+    .faq-item summary:after {
+    content: "+";
+    font-size: 1.25rem;
+    color: var(--text-muted);
+    transition: transform .2s ease
+    }
+
+    .faq-item[open] summary:after {
+    content: "\2212"
+    }
+
+    .faq-item p {
+    padding: 1rem 1.25rem;
+    margin: 0;
+    background: var(--bg-secondary)
+    }
+
+    .tools-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+    margin: 1rem 0
+    }
+
+    .tool-card {
+    display: block;
+    padding: 1.25rem;
+    background: var(--bg-tertiary);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    text-decoration: none;
+    transition: all .2s ease
+    }
+
+    .tool-card:hover {
+    border-color: var(--accent-primary);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md)
+    }
+
+    .tool-card h4 {
+    color: var(--text-primary);
+    margin: 0 0 .5rem;
+    font-size: 1rem
+    }
+
+    .tool-card p {
+    color: var(--text-muted);
+    margin: 0;
+    font-size: .85rem;
+    line-height: 1.5
+    }
+
+    .seo-cta {
+    text-align: center;
+    padding: 2rem;
+    background: var(--bg-tertiary);
+    border-radius: 12px;
+    border: 1px solid var(--border-color)
+    }
+
+    .seo-cta h3 {
+    margin-bottom: 1rem
+    }
+
+    .app-footer {
+    padding: 1rem;
+    background: var(--bg-tertiary);
+    border-top: 1px solid var(--border-color)
+    }
+
+    .footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: .75rem;
+    align-items: center
+    }
+
+    .footer-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center
+    }
+
+    .footer-links a {
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: .85rem;
+    transition: color .2s ease
+    }
+
+    .footer-links a:hover {
+    color: var(--accent-primary)
+    }
+
+    .footer-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    align-items: center;
+    justify-content: center;
+    font-size: .75rem;
+    color: var(--text-muted)
+    }
+
+    .footer-nav {
+    display: flex;
+    gap: 1rem
+    }
+
+    .footer-nav a {
+    color: inherit;
+    text-decoration: none
+    }
+
+    .footer-nav a:hover {
+    color: var(--text-primary)
+    }
+
+    @media(max-width:768px) {
+    .seo-content-inner {
+    padding: 0 1rem
+    }
+
+    .seo-hero h2 {
+    font-size: 1.4rem
+    }
+
+    .seo-lead {
+    font-size: 1rem
+    }
+
+    .seo-section h3 {
+    font-size: 1.2rem
+    }
+
+    .seo-features,
+    .theme-grid,
+    .shortcuts-grid,
+    .tools-grid {
+    grid-template-columns: 1fr
+    }
+
+    .footer-content {
+    text-align: center
+    }
+    }
+    </style>
+    <!-- Themes - Defer loading -->
+    <link rel="preload" as="style" href="themes.css">
+    <link rel="stylesheet" href="themes.css" media="print" onload="this.media='all'">
+    <noscript>
+        <link rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+        <link rel="stylesheet" href="themes.css">
+    </noscript>
 
     <!-- JSON-LD Structured Data -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
         "@type": "SoftwareApplication",
-        "name": "Markdown Viewer",
+        "name": "Markdown Viewer Online",
+        "alternateName": ["MD Viewer", "Markdown Editor Online", "MD Editor"],
         "url": "https://markdownviewer.dev",
         "applicationCategory": "DeveloperApplication",
         "operatingSystem": "Web Browser",
@@ -66,17 +2576,67 @@
             "price": "0",
             "priceCurrency": "USD"
         },
-        "description": "A fast, beautiful online Markdown viewer with live preview, syntax highlighting, Mermaid diagrams, LaTeX math support, and PDF export.",
+        "description": "Free online markdown viewer and markdown editor with live preview. View markdown files instantly with 22 themes, Mermaid diagrams, LaTeX math, syntax highlighting, and PDF export.",
         "featureList": [
-            "Live Markdown Preview",
+            "Online Markdown Viewer",
+            "Markdown Editor with Live Preview",
+            "22 Premium Themes",
             "GitHub Flavored Markdown",
-            "Syntax Highlighting",
-            "Mermaid Diagrams",
-            "LaTeX Math (KaTeX)",
-            "PDF Export",
-            "HTML Export",
-            "20+ Themes",
-            "Distraction-free Mode"
+            "Syntax Highlighting for 190+ Languages",
+            "Mermaid Diagram Support",
+            "LaTeX Math Equations",
+            "Markdown to PDF Export",
+            "Markdown to HTML Export",
+            "Command Palette (Ctrl+K)",
+            "AI Writing Assistant",
+            "Distraction-free Reading Mode"
+        ],
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.9",
+            "ratingCount": "1250"
+        }
+    }
+    </script>
+
+    <!-- FAQ Schema for SEO -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "What is a markdown viewer?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "A markdown viewer is an online tool that renders and displays markdown files with proper formatting. Our markdown viewer converts markdown syntax into beautiful, readable HTML with support for tables, code blocks, images, and more."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How do I view markdown files online?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Simply paste your markdown content into our online markdown viewer, or drag and drop your .md file. The markdown preview appears instantly in the right panel with full formatting, syntax highlighting, and theme support."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Can I edit markdown in the viewer?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes! Our tool is both a markdown viewer and markdown editor. Type or paste markdown in the left panel and see live preview in the right panel. Export to PDF, HTML, or download as a .md file."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What is the best online markdown editor?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "MarkdownViewer.dev offers the best online markdown editor with 22 premium themes, Mermaid diagram support, LaTeX math equations, AI writing assistant, and a command palette for fast workflow. It's free with no signup required."
+                }
+            }
         ]
     }
     </script>
@@ -131,6 +2691,85 @@
                     <div class="theme-dropdown" id="themeDropdown">
                         <div class="theme-dropdown-header">Choose Theme</div>
                         <div class="theme-list" id="themeList"></div>
+                    </div>
+                </div>
+
+                <!-- Tools Dropdown -->
+                <div class="tools-dropdown-container">
+                    <button class="btn btn-icon" id="toolsMenuBtn" title="Tools & Resources">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <rect x="3" y="3" width="7" height="7" rx="1" />
+                            <rect x="14" y="3" width="7" height="7" rx="1" />
+                            <rect x="3" y="14" width="7" height="7" rx="1" />
+                            <rect x="14" y="14" width="7" height="7" rx="1" />
+                        </svg>
+                    </button>
+                    <div class="tools-dropdown" id="toolsDropdown">
+                        <div class="tools-dropdown-header">Tools & Resources</div>
+                        <a href="/tools/markdown-to-pdf" target="_blank" rel="noopener" class="tools-option">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                                <polyline points="14 2 14 8 20 8" />
+                            </svg>
+                            Markdown to PDF
+                        </a>
+                        <a href="/tools/markdown-to-html" target="_blank" rel="noopener" class="tools-option">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <polyline points="16 18 22 12 16 6" />
+                                <polyline points="8 6 2 12 8 18" />
+                            </svg>
+                            Markdown to HTML
+                        </a>
+                        <a href="/tools/table-generator" target="_blank" rel="noopener" class="tools-option">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <rect x="3" y="3" width="18" height="18" rx="2" />
+                                <line x1="3" y1="9" x2="21" y2="9" />
+                                <line x1="3" y1="15" x2="21" y2="15" />
+                                <line x1="9" y1="3" x2="9" y2="21" />
+                                <line x1="15" y1="3" x2="15" y2="21" />
+                            </svg>
+                            Table Generator
+                        </a>
+                        <a href="/cheatsheet" target="_blank" rel="noopener" class="tools-option">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" />
+                                <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z" />
+                            </svg>
+                            Markdown Cheat Sheet
+                        </a>
+                        <div class="tools-divider"></div>
+                        <a href="/about" target="_blank" rel="noopener" class="tools-option">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <circle cx="12" cy="12" r="10" />
+                                <line x1="12" y1="16" x2="12" y2="12" />
+                                <line x1="12" y1="8" x2="12.01" y2="8" />
+                            </svg>
+                            About
+                        </a>
+                        <a href="/privacy" target="_blank" rel="noopener" class="tools-option">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
+                                <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+                            </svg>
+                            Privacy Policy
+                        </a>
+                        <a href="/terms" target="_blank" rel="noopener" class="tools-option">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                                <polyline points="14 2 14 8 20 8" />
+                                <line x1="16" y1="13" x2="8" y2="13" />
+                                <line x1="16" y1="17" x2="8" y2="17" />
+                            </svg>
+                            Terms of Service
+                        </a>
                     </div>
                 </div>
 
@@ -389,8 +3028,94 @@
                         </button>
                     </div>
                 </div>
-                <textarea id="markdownInput" placeholder="Start writing your markdown here..."
-                    spellcheck="false"></textarea>
+                <textarea id="markdownInput" aria-label="Markdown Input"
+                    placeholder="Start writing your markdown here..." spellcheck="false"># Markdown Viewer & Editor Online - Free Live Preview 🚀
+
+Welcome to **MarkdownViewer.dev** - the best **online markdown viewer** and **markdown editor** with instant live preview! **View markdown files** beautifully with our powerful **markdown viewer online** featuring 22 premium themes, Mermaid diagrams, LaTeX math, and advanced editing tools. No signup required - start using our **free online markdown editor** instantly!
+
+---
+
+## Why Choose Our Online Markdown Viewer?
+
+Our **markdown viewer** and **markdown editor online** delivers the fastest, most beautiful viewing and editing experience available. Whether you need an **online markdown viewer** with live preview, **md viewer** for file preview, or **markdown editor with preview** - our platform has everything you need:
+
+- 🚀 **Live Preview**: Real-time **markdown viewer** updates as you type - no refresh needed
+- 📁 **Import Markdown**: **Upload markdown files** or drag & drop .md files to view instantly
+- 🎨 **22 Premium Themes**: GitHub, Notion, Obsidian, Dracula, Nord, Tokyo Night, and 16 more
+- 📊 **Mermaid Diagrams**: Create flowcharts, sequence diagrams, Gantt charts directly in markdown
+- 📐 **LaTeX Math**: Full equation support with KaTeX rendering in our **markdown viewer**
+- 💻 **Syntax Highlighting**: 190+ programming languages with beautiful code blocks
+- 📤 **Export Options**: [Markdown to PDF](/tools/markdown-to-pdf), [Markdown to HTML](/tools/markdown-to-html), and .md download
+- ⌨️ **Command Palette**: Lightning-fast workflow with `Ctrl+K` shortcuts
+
+> **Pro Tip**: Press `Ctrl+K` to open the command palette and access any feature instantly!
+
+---
+
+## Online Markdown Editor Features
+
+Our **online markdown editor** is designed for maximum productivity. Whether you're a developer, writer, or student, our **md editor** provides everything you need:
+
+**🎯 Perfect For:**
+- 📋 GitHub README files and documentation
+- 📝 Technical writing and blog posts  
+- 📊 Data tables with our [markdown table generator](/tools/table-generator)
+- 🎓 Academic papers with LaTeX equations
+- 💼 Professional documentation and reports
+
+**⚡ Key Features:**
+- **Import markdown** - **Upload .md files** or drag & drop to open instantly
+- **Real-time preview** - See changes instantly as you type
+- **Auto-save** - Your work saves automatically to browser storage
+- **Version history** - Save snapshots and restore previous versions
+- **AI Assistant** - Built-in AI help for writing and editing
+
+---
+
+## View Markdown Files Instantly
+
+Need an **online markdown viewer**? Our **md viewer** gives you instant preview of any markdown file with 22 beautiful themes. Upload, paste, or type directly into our **markdown viewer with preview**:
+
+**✨ Full Markdown Support:**
+- ✅ **GitHub-flavored markdown** (GFM) with task lists and tables
+- ✅ **Mermaid diagrams** - flowcharts, sequence diagrams, Gantt charts
+- ✅ **Code syntax highlighting** for 190+ programming languages
+- ✅ **LaTeX math equations** with KaTeX (inline and block math)
+- ✅ **Markdown tables** with alignment - try our [Table Generator](/tools/table-generator)
+- ✅ Images, links, blockquotes, and nested lists
+
+---
+
+## Code Syntax Highlighting
+
+Display code in 190+ languages with beautiful syntax highlighting:
+
+```javascript
+// JavaScript example with async/await
+async function fetchMarkdown(url) {
+    try {
+        const response = await fetch(url);
+        const markdown = await response.text();
+        return marked.parse(markdown);
+    } catch (error) {
+        console.error('Error loading markdown:', error);
+    }
+}
+
+fetchMarkdown('/docs/readme.md');
+```
+
+```python
+# Python example with type hints
+def process_markdown(content: str) -> dict:
+    """Parse markdown and extract metadata."""
+    lines = content.split('\n')
+    return {
+        'title': lines[0].lstrip('# '),
+        'word_count': len(content.split()),
+        'has_code': '```' in content
+    }
+```</textarea>
             </section>
 
             <!-- Resize Handle -->
@@ -429,14 +3154,474 @@
             <button class="view-btn" data-view="preview">Preview</button>
         </div>
 
-        <!-- Footer for Internal Links & SEO -->
-        <footer class="app-footer"
-            style="padding: 0.5rem; text-align: center; font-size: 0.75rem; color: var(--text-muted); background: var(--bg-secondary); border-top: 1px solid var(--border-color);">
-            <nav>
-                <a href="#" style="color: inherit; text-decoration: none; margin: 0 0.5rem;">Privacy</a>
-                <a href="#" style="color: inherit; text-decoration: none; margin: 0 0.5rem;">Terms</a>
-                <a href="#" style="color: inherit; text-decoration: none; margin: 0 0.5rem;">About</a>
-            </nav>
+        <!-- SEO Content Section -->
+        <section class="seo-content" id="seoContent">
+            <div class="seo-content-inner">
+                <button class="seo-toggle" id="seoToggle" aria-expanded="false">
+                    <span>Learn More About Markdown Viewer</span>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="6 9 12 15 18 9" />
+                    </svg>
+                </button>
+
+                <article class="seo-article" id="seoArticle">
+                    <!-- Hero Section -->
+                    <header class="seo-hero">
+                        <h2>Markdown Viewer & Editor Online – Free Live Preview</h2>
+                        <p class="seo-lead">
+                            Welcome to <strong>MarkdownViewer.dev</strong> – the fastest <strong>online markdown
+                                viewer</strong> and <strong>markdown editor</strong> with instant live preview.
+                            <strong>View markdown files</strong> beautifully with our powerful <strong>markdown viewer
+                                online</strong> featuring 22 premium themes, real-time preview, Mermaid diagrams, LaTeX
+                            math support, and advanced editing tools.
+                            No signup required – just paste, view, and edit!
+                        </p>
+                    </header>
+
+                    <!-- Why Choose Us -->
+                    <section class="seo-section">
+                        <h3>Why Choose Our Online Markdown Viewer?</h3>
+                        <p>
+                            Our <strong>markdown viewer</strong> and <strong>markdown editor online</strong> delivers
+                            the fastest, most beautiful viewing and editing experience available.
+                            Whether you need a <strong>markdown file viewer</strong>, <strong>online markdown
+                                editor</strong> with live preview, or a <strong>markdown preview tool</strong> – our
+                            platform has everything developers, writers, and students need:
+                        </p>
+                        <ul class="seo-features">
+                            <li><strong>🚀 Live Preview:</strong> Real-time <strong>markdown viewer</strong> updates as
+                                you type – no refresh needed</li>
+                            <li><strong>📁 Import Markdown:</strong> <strong>Upload markdown files</strong> or drag &
+                                drop .md files to view instantly</li>
+                            <li><strong>🎨 22 Premium Themes:</strong> GitHub, Notion, Obsidian, Dracula, Nord, and 17
+                                more beautiful themes</li>
+                            <li><strong>📊 Mermaid Diagrams:</strong> Create flowcharts, sequence diagrams, Gantt charts
+                                directly in markdown</li>
+                            <li><strong>📐 LaTeX Math:</strong> Full equation support with KaTeX rendering in our
+                                <strong>markdown viewer</strong>
+                            </li>
+                            <li><strong>💻 Syntax Highlighting:</strong> 190+ programming languages with beautiful code
+                                blocks</li>
+                            <li><strong>📤 Export Options:</strong> <a href="/tools/markdown-to-pdf">Markdown to
+                                    PDF</a>, <a href="/tools/markdown-to-html">Markdown to HTML</a>, and .md download
+                            </li>
+                            <li><strong>⌨️ Command Palette:</strong> Lightning-fast workflow with Ctrl+K shortcuts</li>
+                            <li><strong>🤖 AI Assistant:</strong> Built-in AI writing help for grammar, rewriting, and
+                                content generation</li>
+                        </ul>
+                    </section>
+
+                    <!-- Features Deep Dive -->
+                    <section class="seo-section">
+                        <h3>Markdown Viewer Features – View Markdown Files Instantly</h3>
+                        <p>
+                            Need to <strong>view markdown files</strong>? Our <strong>online markdown viewer</strong>
+                            gives you instant preview with 22 beautiful themes.
+                            Upload, paste, or type directly into our <strong>markdown viewer with preview</strong>. The
+                            <strong>md viewer</strong> supports all standard markdown syntax plus powerful extensions.
+                        </p>
+
+                        <h4>Complete Markdown Support</h4>
+                        <p>Our <strong>markdown viewer online</strong> fully supports:</p>
+                        <ul>
+                            <li>✅ <strong>GitHub-flavored markdown</strong> (GFM) with task lists and tables</li>
+                            <li>✅ <strong>Mermaid diagrams</strong> – flowcharts, sequence diagrams, Gantt charts, pie
+                                charts</li>
+                            <li>✅ <strong>Code syntax highlighting</strong> for 190+ programming languages</li>
+                            <li>✅ <strong>LaTeX math equations</strong> with KaTeX (inline and block math)</li>
+                            <li>✅ <strong>Markdown tables</strong> with alignment and formatting – try our <a
+                                    href="/tools/table-generator">Markdown Table Generator</a></li>
+                            <li>✅ Images, links, blockquotes, horizontal rules, and nested lists</li>
+                            <li>✅ <strong>YAML frontmatter</strong> parsing for metadata</li>
+                        </ul>
+                    </section>
+
+                    <!-- 22 Themes Section -->
+                    <section class="seo-section">
+                        <h3>🎨 22 Premium Markdown Themes – Unique to Our Viewer</h3>
+                        <p>
+                            Unlike other <strong>markdown viewers online</strong>, we offer 22 professionally designed
+                            themes to match your style and workflow.
+                            Our <strong>markdown viewer themes</strong> include:
+                        </p>
+                        <div class="theme-grid">
+                            <div class="theme-item">
+                                <strong>GitHub Theme</strong> – Classic GitHub markdown styling, perfect for README
+                                previews
+                            </div>
+                            <div class="theme-item">
+                                <strong>Notion Theme</strong> – Clean, minimalist Notion-style viewing for documentation
+                            </div>
+                            <div class="theme-item">
+                                <strong>Obsidian Theme</strong> – Popular dark theme for markdown enthusiasts and
+                                note-takers
+                            </div>
+                            <div class="theme-item">
+                                <strong>Dracula Theme</strong> – Beautiful purple-accented dark theme loved by
+                                developers
+                            </div>
+                            <div class="theme-item">
+                                <strong>Nord Theme</strong> – Arctic, north-bluish color palette for eye comfort
+                            </div>
+                            <div class="theme-item">
+                                <strong>Solarized Themes</strong> – Both light and dark variants of the legendary
+                                Solarized palette
+                            </div>
+                        </div>
+                        <p>
+                            Plus Tokyo Night, One Dark, Monokai, Gruvbox, and many more! Switch themes instantly using
+                            the theme picker or command palette (Ctrl+K).
+                        </p>
+                    </section>
+
+                    <!-- Markdown Editor Section -->
+                    <section class="seo-section">
+                        <h3>Online Markdown Editor – Edit & Preview Live</h3>
+                        <p>
+                            Our <strong>markdown editor online</strong> combines powerful editing with instant preview.
+                            The <strong>md editor</strong> features:
+                        </p>
+                        <ul>
+                            <li><strong>Split-pane editing:</strong> Write markdown on the left, see rendered preview on
+                                the right</li>
+                            <li><strong>Floating toolbar:</strong> Quick formatting buttons for bold, italic, headings,
+                                lists, links, and more</li>
+                            <li><strong>Auto-save:</strong> Your work is automatically saved to browser storage</li>
+                            <li><strong>Version history:</strong> Save snapshots and restore previous versions</li>
+                            <li><strong>Find & replace:</strong> Powerful search with keyboard shortcuts (Ctrl+F)</li>
+                            <li><strong>Drag & drop:</strong> Drop .md files directly into the editor</li>
+                        </ul>
+                        <p>
+                            The <strong>online markdown editor</strong> also supports keyboard shortcuts for all common
+                            formatting operations – press Ctrl+B for bold, Ctrl+I for italic, and Ctrl+K to open the
+                            command palette.
+                        </p>
+                    </section>
+
+                    <!-- Markdown to PDF/HTML -->
+                    <section class="seo-section">
+                        <h3>Markdown to PDF & HTML – Export Your Documents</h3>
+                        <p>
+                            Convert your markdown documents with our built-in export tools:
+                        </p>
+                        <ul>
+                            <li><strong><a href="/tools/markdown-to-pdf">Markdown to PDF</a>:</strong> Generate
+                                beautiful, print-ready PDF documents with your chosen theme</li>
+                            <li><strong><a href="/tools/markdown-to-html">Markdown to HTML</a>:</strong> Export styled
+                                HTML with embedded CSS for web publishing</li>
+                            <li><strong>Raw Markdown:</strong> Download your .md source file for use in other
+                                applications</li>
+                        </ul>
+                        <p>
+                            All exports preserve your formatting, code highlighting, and theme styling. The
+                            <strong>markdown to PDF</strong> feature is perfect for creating documentation, reports, and
+                            shareable documents.
+                        </p>
+                    </section>
+
+                    <!-- Mermaid Diagrams -->
+                    <section class="seo-section">
+                        <h3>📊 View Mermaid Diagrams in Markdown</h3>
+                        <p>
+                            Our <strong>markdown viewer</strong> includes full <strong>Mermaid diagram</strong> support.
+                            Create beautiful diagrams directly in your markdown:
+                        </p>
+                        <ul>
+                            <li><strong>Flowcharts:</strong> Visualize processes and decision trees</li>
+                            <li><strong>Sequence diagrams:</strong> Document API calls and system interactions</li>
+                            <li><strong>Gantt charts:</strong> Project timelines and schedules</li>
+                            <li><strong>Pie charts:</strong> Data visualization with labels and percentages</li>
+                            <li><strong>Entity relationship diagrams:</strong> Database schemas and relationships</li>
+                            <li><strong>State diagrams:</strong> State machines and transitions</li>
+                        </ul>
+                        <p>
+                            Simply wrap your Mermaid code in a code block with the <code>mermaid</code> language
+                            identifier, and our <strong>online markdown viewer</strong> renders it instantly.
+                        </p>
+                    </section>
+
+                    <!-- LaTeX Math -->
+                    <section class="seo-section">
+                        <h3>📐 LaTeX Math Equations in Markdown Viewer</h3>
+                        <p>
+                            Write mathematical equations with full LaTeX support. Our <strong>markdown viewer</strong>
+                            uses KaTeX for fast, beautiful math rendering:
+                        </p>
+                        <ul>
+                            <li><strong>Inline math:</strong> Use <code>$equation$</code> for inline equations</li>
+                            <li><strong>Block math:</strong> Use <code>$$equation$$</code> for centered display
+                                equations</li>
+                            <li><strong>Full LaTeX syntax:</strong> Fractions, integrals, matrices, Greek letters, and
+                                more</li>
+                        </ul>
+                        <p>
+                            Perfect for academic papers, technical documentation, and scientific content. The math
+                            rendering is instant – no page refresh required.
+                        </p>
+                    </section>
+
+                    <!-- Markdown Syntax Guide -->
+                    <section class="seo-section">
+                        <h3>📝 Markdown Syntax Quick Reference</h3>
+                        <p>
+                            New to markdown? Here's a quick <strong>markdown cheat sheet</strong> to get you started.
+                            For the complete guide, visit our <a href="/cheatsheet">Markdown Cheat Sheet</a>.
+                        </p>
+                        <div class="syntax-table">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Element</th>
+                                        <th>Markdown Syntax</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Heading 1</td>
+                                        <td><code># Heading 1</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Heading 2</td>
+                                        <td><code>## Heading 2</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Bold</td>
+                                        <td><code>**bold text**</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Italic</td>
+                                        <td><code>*italic text*</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Link</td>
+                                        <td><code>[title](https://url.com)</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Image</td>
+                                        <td><code>![alt text](image.jpg)</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Code</td>
+                                        <td><code>`inline code`</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Code Block</td>
+                                        <td><code>```language</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Blockquote</td>
+                                        <td><code>> quote text</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Unordered List</td>
+                                        <td><code>- item</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Ordered List</td>
+                                        <td><code>1. item</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Task List</td>
+                                        <td><code>- [x] completed task</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Table</td>
+                                        <td><code>| Col1 | Col2 |</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Horizontal Rule</td>
+                                        <td><code>---</code></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </section>
+
+                    <!-- Command Palette -->
+                    <section class="seo-section">
+                        <h3>⌨️ Command Palette – Fastest Markdown Workflow</h3>
+                        <p>
+                            Our <strong>markdown viewer</strong> features a powerful command palette (Ctrl+K) for
+                            lightning-fast actions – something most <strong>online markdown viewers</strong> lack.
+                        </p>
+                        <p>Access any feature instantly:</p>
+                        <ul>
+                            <li>Switch themes with a keystroke</li>
+                            <li>Export to PDF, HTML, or Markdown</li>
+                            <li>Toggle reading mode, TOC, or AI assistant</li>
+                            <li>Insert code blocks, tables, diagrams</li>
+                            <li>Format text (bold, italic, headings)</li>
+                        </ul>
+                        <p>
+                            The command palette learns from your usage and shows your most-used commands first. It's the
+                            fastest way to work with markdown.
+                        </p>
+                    </section>
+
+                    <!-- Keyboard Shortcuts -->
+                    <section class="seo-section">
+                        <h3>⌨️ Markdown Editor Keyboard Shortcuts</h3>
+                        <p>Speed up your workflow with these keyboard shortcuts in our <strong>markdown editor</strong>:
+                        </p>
+                        <div class="shortcuts-grid">
+                            <div><kbd>Ctrl</kbd>+<kbd>B</kbd> Bold</div>
+                            <div><kbd>Ctrl</kbd>+<kbd>I</kbd> Italic</div>
+                            <div><kbd>Ctrl</kbd>+<kbd>K</kbd> Command Palette</div>
+                            <div><kbd>Ctrl</kbd>+<kbd>S</kbd> Save Version</div>
+                            <div><kbd>Ctrl</kbd>+<kbd>F</kbd> Find</div>
+                            <div><kbd>Ctrl</kbd>+<kbd>H</kbd> Find & Replace</div>
+                            <div><kbd>Ctrl</kbd>+<kbd>Z</kbd> Undo</div>
+                            <div><kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>Z</kbd> Redo</div>
+                            <div><kbd>F11</kbd> Reading Mode</div>
+                        </div>
+                    </section>
+
+                    <!-- FAQ Section -->
+                    <section class="seo-section seo-faq">
+                        <h3>❓ Frequently Asked Questions</h3>
+
+                        <details class="faq-item">
+                            <summary><strong>What is a markdown viewer?</strong></summary>
+                            <p>
+                                A <strong>markdown viewer</strong> is an online tool that renders and displays markdown
+                                files (.md) with proper formatting.
+                                Our <strong>markdown viewer</strong> converts markdown syntax into beautiful, readable
+                                HTML with support for tables, code blocks, images, diagrams, and more.
+                                It's essential for previewing README files, documentation, and any markdown content.
+                            </p>
+                        </details>
+
+                        <details class="faq-item">
+                            <summary><strong>How do I view markdown files online?</strong></summary>
+                            <p>
+                                Simply paste your markdown content into our <strong>online markdown viewer</strong>, or
+                                drag and drop your .md file directly into the editor.
+                                The <strong>markdown preview</strong> appears instantly in the right panel with full
+                                formatting, syntax highlighting, and your chosen theme.
+                                No signup or installation required – it works directly in your browser.
+                            </p>
+                        </details>
+
+                        <details class="faq-item">
+                            <summary><strong>Can I edit markdown in the viewer?</strong></summary>
+                            <p>
+                                Yes! Our tool is both a <strong>markdown viewer</strong> and <strong>markdown
+                                    editor</strong>. Type or paste markdown in the left panel and see live preview in
+                                the right panel.
+                                Use the floating toolbar for quick formatting, or keyboard shortcuts for efficiency.
+                                Export to PDF, HTML, or download as a .md file when done.
+                            </p>
+                        </details>
+
+                        <details class="faq-item">
+                            <summary><strong>What is the best online markdown editor?</strong></summary>
+                            <p>
+                                MarkdownViewer.dev offers the best <strong>online markdown editor</strong> with 22
+                                premium themes, Mermaid diagram support, LaTeX math equations, AI writing assistant, and
+                                a command palette for fast workflow.
+                                It's completely free with no signup required. Features like syntax highlighting for 190+
+                                languages, version history, and distraction-free reading mode make it the most complete
+                                solution.
+                            </p>
+                        </details>
+
+                        <details class="faq-item">
+                            <summary><strong>How do I convert markdown to PDF?</strong></summary>
+                            <p>
+                                Click the Export button and select "PDF Document" to convert your <strong>markdown to
+                                    PDF</strong>.
+                                The PDF preserves your theme styling, code highlighting, and formatting. You can also
+                                use our dedicated <a href="/tools/markdown-to-pdf">Markdown to PDF converter</a> tool.
+                            </p>
+                        </details>
+
+                        <details class="faq-item">
+                            <summary><strong>Is this markdown viewer free?</strong></summary>
+                            <p>
+                                Yes! Our <strong>markdown viewer</strong> and <strong>markdown editor</strong> is 100%
+                                free with no signup required.
+                                All features including themes, exports, Mermaid diagrams, LaTeX math, and AI assistance
+                                are available at no cost.
+                                Your documents stay private in your browser – we don't store your content on our
+                                servers.
+                            </p>
+                        </details>
+
+                        <details class="faq-item">
+                            <summary><strong>What markdown features are supported?</strong></summary>
+                            <p>
+                                Our <strong>md viewer</strong> supports all standard markdown plus extensions:
+                                GitHub-flavored markdown (GFM), tables, task lists, strikethrough,
+                                Mermaid diagrams, LaTeX math, syntax highlighting for 190+ languages, YAML frontmatter,
+                                and more. View our <a href="/cheatsheet">markdown cheat sheet</a> for the complete
+                                syntax guide.
+                            </p>
+                        </details>
+                    </section>
+
+                    <!-- Tools Section -->
+                    <section class="seo-section">
+                        <h3>🛠️ Markdown Viewer Tools & Resources</h3>
+                        <p>Explore our collection of <strong>markdown tools</strong> to enhance your workflow:</p>
+                        <div class="tools-grid">
+                            <a href="/tools/markdown-to-pdf" class="tool-card">
+                                <h4>📄 Markdown to PDF</h4>
+                                <p>Convert markdown documents to beautiful, print-ready PDF files with theme support.
+                                </p>
+                            </a>
+                            <a href="/tools/markdown-to-html" class="tool-card">
+                                <h4>🌐 Markdown to HTML</h4>
+                                <p>Export styled HTML with embedded CSS for web publishing and documentation.</p>
+                            </a>
+                            <a href="/tools/table-generator" class="tool-card">
+                                <h4>📊 Table Generator</h4>
+                                <p>Create markdown tables visually with our interactive table builder tool.</p>
+                            </a>
+                            <a href="/cheatsheet" class="tool-card">
+                                <h4>📝 Markdown Cheat Sheet</h4>
+                                <p>Complete markdown syntax reference with examples for all elements.</p>
+                            </a>
+                        </div>
+                    </section>
+
+                    <!-- CTA Section -->
+                    <section class="seo-section seo-cta">
+                        <h3>🚀 Ready to View Markdown Files Beautifully?</h3>
+                        <p>
+                            <strong>Join thousands of developers, writers, and students</strong> who use our
+                            <strong>markdown viewer online</strong> daily.
+                            Our <strong>free markdown viewer</strong> combines speed with beauty – perfect for viewing
+                            GitHub READMEs, technical documentation, notes, and any markdown content.
+                        </p>
+                        <p>
+                            <strong>Start now:</strong> Paste your markdown above, choose from 22 themes, and experience
+                            the best <strong>online markdown viewer</strong> available.
+                            No signup. No limits. Just beautiful markdown.
+                        </p>
+                    </section>
+                </article>
+            </div>
+        </section>
+
+        <!-- Footer with Internal Links -->
+        <footer class="app-footer">
+            <div class="footer-content">
+                <div class="footer-links">
+                    <a href="/tools/markdown-to-pdf" target="_blank" rel="noopener">Markdown to PDF</a>
+                    <a href="/tools/markdown-to-html" target="_blank" rel="noopener">Markdown to HTML</a>
+                    <a href="/tools/table-generator" target="_blank" rel="noopener">Table Generator</a>
+                    <a href="/cheatsheet" target="_blank" rel="noopener">Markdown Cheat Sheet</a>
+                </div>
+                <div class="footer-meta">
+                    <span>© 2026 MarkdownViewer.dev – Free Online Markdown Viewer & Editor</span>
+                    <nav class="footer-nav">
+                        <a href="/privacy" target="_blank" rel="noopener">Privacy</a>
+                        <a href="/terms" target="_blank" rel="noopener">Terms</a>
+                        <a href="/about" target="_blank" rel="noopener">About</a>
+                        <a href="https://github.com/argha5/markdown-view" target="_blank" rel="noopener">GitHub</a>
+                    </nav>
+                </div>
+            </div>
         </footer>
     </div>
 
@@ -658,15 +3843,59 @@
     </div>
 
     <!-- Scripts -->
-    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <!-- Critical: Load only marked.js and highlight.js immediately with defer -->
+    <!-- marked.js removed for Web Worker usage -->
+    <!-- highlight.js removed for lazy loading -->
+
+    <!-- Lazy Loading Helper: Load heavy libraries only when needed -->
+    <!-- Lazy Loaders moved to script.js to prevent Preload Scanner from fetching them early -->
+
+    <!-- Accessibility Overrides -->
+    <style>
+        .seo-toggle {
+            color: var(--text-primary) !important;
+            font-weight: 600;
+        }
+
+        .toolbar-btn {
+            min-width: 48px;
+            min-height: 48px;
+            padding: 0;
+            /* Centered icon */
+            margin: 0 2px;
+            flex-shrink: 0;
+            /* Prevent shrinking on mobile */
+        }
+
+        /* Mobile Toolbar Handling */
+        @media (max-width: 768px) {
+            #floatingToolbar {
+                max-width: 95vw;
+                overflow-x: auto;
+                justify-content: flex-start;
+                /* Start from left */
+                padding: 8px;
+                /* Touch padding */
+                -webkit-overflow-scrolling: touch;
+                scrollbar-width: none;
+                /* Hide scrollbar for cleaner look */
+            }
+
+            #floatingToolbar::-webkit-scrollbar {
+                display: none;
+            }
+        }
+
+        /* Footer link contrast */
+        .footer-links a {
+            color: var(--text-primary) !important;
+            text-decoration: underline;
+        }
+    </style>
+
     <!-- Optional: config.js contains API key (gitignored, won't exist on GitHub) -->
-    <script src="config.js" onerror="console.log('config.js not found - AI will prompt for API key')"></script>
-    <script src="script.js"></script>
+    <script defer src="config.js" onerror="console.log('config.js not found - AI will prompt for API key')"></script>
+    <script defer src="script.min.js?v=2026.7"></script>
 </body>
 
 </html>

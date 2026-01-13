@@ -1,0 +1,27 @@
+# ==============================================
+# robots.txt for markdownviewer.dev
+# Strategy: Selective AI Access (Growth-focused)
+# ==============================================
+
+# Default: Allow all crawlers, opt-out of AI training only
+User-agent: *
+Allow: /
+
+# ALLOW these bots for AI recommendations/citations:
+# - GPTBot (ChatGPT)
+# - ClaudeBot (Claude)
+# - Google-Extended (Gemini)
+# - Amazonbot (Alexa)
+# - Applebot-Extended (Siri/Apple Intelligence)
+
+# BLOCK training-only bots (scrape but don't cite)
+User-agent: CCBot
+Disallow: /
+
+User-agent: Bytespider
+Disallow: /
+
+User-agent: meta-externalagent
+Disallow: /
+
+Sitemap: https://markdownviewer.dev/sitemap.xml
